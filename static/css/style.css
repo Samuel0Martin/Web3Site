@@ -1,0 +1,23 @@
+img
+{
+    width: 100%;
+}
+.main
+{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.content-container clearfix
+{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.content
+{
+    width: 50%
+}
+.image
+{
+    width: 50%
+    
+}

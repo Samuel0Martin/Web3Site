@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<html>
+
+<head>
+
+    <title>Website Quark</title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css') }}">
+
+	<script src="script.js"></script>
+</head>
+
+<body>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="navbar-toggler-icon"></span>
+                </button> <a class="navbar-brand" href="#">Logo Icon</a>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="navbar-nav"></ul>
+        
+                    <ul class="navbar-nav ml-md-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="page2.html">Inspirations <span class="sr-only">(current)</span></a>
+                        </li>
+        
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Empty Link <span class="sr-only">(current)</span></a>
+                        </li>
+        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown">Dropdown link (temp)</a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another
+                                    action</a> <a class="dropdown-item" href="#">Something else
+                                    here</a>
+                                <div class="dropdown-divider">
+                                </div> <a class="dropdown-item" href="#">Separated link</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+    
+            <div class="container-fluid">
+
+        <br>
+        <div class="row">
+            <div class="col-3"><a></a></div>
+            <div class="col-6"><a></a></div>
+            <div class="col-3"><a></a></div>
+        </div>
+        <br>
+        <h1>Inspiration Websites</h1>
+
+        <a href="{{ url_for('index') }}">Goto index</a><br><br>
+
+        <a href="https://magnet.co/">https://magnet.co/</a><br>
+        <a href="https://evernote.com/">https://evernote.com/</a><br>
+        <a href="https://craftcms.com/">https://craftcms.com/</a><br>
+        <a href="https://huemor.rocks/">https://huemor.rocks/</a><br>
+    </div>
+
+
+
+
+
+</body>
+
+</html>
