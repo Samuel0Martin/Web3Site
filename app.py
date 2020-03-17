@@ -31,8 +31,45 @@ def great_world():
 
 @app.route('/page4')
 def fourth_world():
-	num = random() * 45345645348564853533321323545656989907086421414343567680709653453463546788969756434547657097954421324467609097966423
-	return 'This is the ' + str(floor(num))
+
+	num = random() * 45345645348564853533321323546423097
+	return 'This is the page number: ' + str(floor(num))
+
+@app.route('/page5')
+def fifth_world():
+	return User.objects.to_json()
+
+@app.route('/pageCountry')
+def all_world():
+	for country in Country.objects:
+		print(country.name)
+	return Country.objects.to_json()
+	
+	
+@app.route('/countries', methods=['POST'])
+def addCountry():
+	Country(name='Country A').save()
+	return 'Created a new Country'
+	
+@app.route('/countries', methods=['GET'])
+def findCountries():
+	countries = Country.objects
+	return countries.to_json()
+	
+@app.route('/countries/<country_id>', methods=['GET'])
+def getCountry(country_id=None):
+	countries = None
+	if country_id is None:
+		countries = Country.objects
+	else:
+		countries = Country.objects.get(id=country_id)
+	return countries.to_json()
+	
+@app.route('/countries', methods=['DELETE'])
+def deleteCountry():
+	Country(name='Country A').delete()
+	return 'Removed a Country'
+
 
 
 if __name__ =="__main__":
