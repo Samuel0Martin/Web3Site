@@ -1,9 +1,9 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 from random import random
 from math import floor
+from mongoengine import *
 
 app = Flask(__name__)
-
 
 connect('web3_DB')
 
@@ -20,27 +20,33 @@ class Country(Document):
 @app.route('/home')
 def index():
     return render_template('index.html')
-
-
+	
 @app.route('/inspire')
 @app.route('/inspiration')
 def inspire():
-    return render_template('inspiration.html')
+    return render_template('inspiration.html')	
 
+@app.route('/page1')
+def hello_world():
+	bob = User(email='a123@b123', first_name='Bob', last_name='Bob2').save()
+	return 'Hello, World!'
 
+@app.route('/createCountry')
+def create_world():
+	Country(name='Bobs Country').save()
+	return 'Created a new Country'
 
 @app.route('/page2')
 def return_world():
-    return 'This is the second page.'
+	return 'This is the second page.'
 
 @app.route('/page3')
 def great_world():
-	num = random() * 765367389534659346983867439867483768473986723076246720750917095710752379864370984730687067026797208601
+	num = random() * 100
 	return 'This is page ' + str(floor(num)) + '.'
 
 @app.route('/page4')
 def fourth_world():
-
 	num = random() * 45345645348564853533321323546423097
 	return 'This is the page number: ' + str(floor(num))
 
@@ -78,7 +84,6 @@ def getCountry(country_id=None):
 def deleteCountry():
 	Country.objects.get(name='Country A').delete()
 	return 'Removed a Country'
-
 
 
 if __name__ =="__main__":
