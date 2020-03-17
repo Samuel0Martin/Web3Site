@@ -21,3 +21,41 @@ img
     width: 50%
     
 }
+.block1
+{
+	padding-top: 70px;
+	padding-bottom: 70px;
+}
+
+.block2
+{
+	background-color: black;
+	padding-top: 70px;
+	padding-bottom: 70px;
+}
+
+.block3
+{
+	
+}
+
+.wrap
+{
+	
+}
+
+.cardA
+{
+	padding: 36px;
+	border-top: .25rem solid #98f5df;
+	flex-direction: column;
+}
+
+@media (max-width: 768px)
+{
+	.cardGroup
+	{
+		grid-template-columns: repeat(1,1fr);
+    }
+}
+
