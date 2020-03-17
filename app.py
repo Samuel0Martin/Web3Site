@@ -71,13 +71,13 @@ def findCountries():
 	countries = Country.objects
 	return countries.to_json()
 	
-@app.route('/countries/<country_id>', methods=['GET'])
-def getCountry(country_id=None):
+@app.route('/countries/<country_name>', methods=['GET'])
+def getCountry(country_name=None):
 	countries = None
-	if country_id is None:
+	if country_name is None:
 		countries = Country.objects
 	else:
-		countries = Country.objects.get(id=country_id)
+		countries = Country.objects.get(id=country_name)
 	return countries.to_json()
 	
 @app.route('/countries', methods=['DELETE'])
