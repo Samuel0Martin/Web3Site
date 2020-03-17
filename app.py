@@ -5,6 +5,15 @@ from math import floor
 app = Flask(__name__)
 
 
+connect('web3_DB')
+
+class User(Document):
+    email = StringField()
+    first_name = StringField()
+    last_name = StringField()
+
+class Country(Document):
+    name = StringField()
 
 @app.route('/')
 @app.route('/index')
@@ -67,7 +76,7 @@ def getCountry(country_id=None):
 	
 @app.route('/countries', methods=['DELETE'])
 def deleteCountry():
-	Country(name='Country A').delete()
+	Country.objects.get(name='Country A').delete()
 	return 'Removed a Country'
 
 
