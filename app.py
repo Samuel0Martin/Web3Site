@@ -73,7 +73,7 @@ def getCountry(country_id=None):
 @app.route('/countries', methods=['DELETE'])
 def deleteCountry():
 	Country(name='Country A').delete()
-	return 'Removed a Country
+	return 'Removed a Country'
 
 
 
