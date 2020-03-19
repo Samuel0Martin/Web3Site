@@ -50,6 +50,8 @@ def return_world():
 		d = list(r)
 		for data in d:
 			print(data)
+		return 'Data'
+			
 
 @app.route('/page3')
 def great_world():
