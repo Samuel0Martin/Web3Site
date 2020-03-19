@@ -41,14 +41,13 @@ def create_world():
 @app.route('/page2')
 def return_world():
 	for file in os.listdir(app.config['FILES_FOLDER']):
-    filename = os.fsdecode(file)
-    path = os.path.join(app.config['FILES_FOLDER'],filename)
-    f = open(path)
-    r = csv.reader(f)
-    d = list(r)
-    for data in d:
-        print(data)
-	return 'This is the second page.'
+		filename = os.fsdecode(file)
+		path = os.path.join(app.config['FILES_FOLDER'],filename)
+		f = open(path)
+		r = csv.reader(f)
+		d = list(r)
+		for data in d:
+			print(data)
 
 @app.route('/page3')
 def great_world():
