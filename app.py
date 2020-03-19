@@ -50,9 +50,7 @@ def return_world():
 		f = open(path)
 		r = csv.reader(f)
 		d = list(r)
-		for data in d:
-			print(data)
-		dataList = json.dumps(data)
+		dataList.append(d)
 	return json.dumps(dataList)
 			
 
