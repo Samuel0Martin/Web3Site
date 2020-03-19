@@ -52,7 +52,7 @@ def return_world():
 		d = list(r)
 		for data in d:
 			print(data)
-			l = data
+		l = data
 	return json.dumps(l)
 			
 
