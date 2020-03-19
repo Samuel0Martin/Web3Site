@@ -50,7 +50,7 @@ def return_world():
 		d = list(r)
 		for data in d:
 			print(data)
-		return 'Data'
+		return data
 			
 
 @app.route('/page3')
