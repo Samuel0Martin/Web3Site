@@ -43,7 +43,7 @@ def create_world():
 
 @app.route('/page2')
 def return_world():
-	l = []
+	dataList = []
 	for file in os.listdir(app.config['FILES_FOLDER']):
 		filename = os.fsdecode(file)
 		path = os.path.join(app.config['FILES_FOLDER'],filename)
@@ -52,8 +52,8 @@ def return_world():
 		d = list(r)
 		for data in d:
 			print(data)
-		l = data
-	return json.dumps(l)
+		dataList = json.dumps(data)
+	return json.dumps(dataList)
 			
 
 @app.route('/page3')
