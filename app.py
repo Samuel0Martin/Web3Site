@@ -67,9 +67,9 @@ def fourth_world():
 	return 'This is the page number: ' + str(floor(num))
 	
 	
-@app.route('/endd', methods=['GET'])
+@app.route('/endd')
 def endd():
-    return render_template('Page3.html')
+    return render_template('Page3.html'), 200
 
 @app.route('/page5')
 def fifth_world():

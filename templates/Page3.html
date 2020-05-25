@@ -16,16 +16,26 @@
 		$(document).ready(function(){
 			var name = "Bob";
 			console.log(name);
-			$.ajax({url: "demo_test.txt", success: function(result){
-			  $("#divtest").html(result);
+			$.ajax({url: "endd", success: function(result){
+			  $("#mainStuff").html(result);
 			}});
+			$.get(url: "endd", function(){
+				//this is the success function, triggered by 2xx
+				$("#success").html(result);
+			}).fail(function(){
+				//this is an error function, triggered by 5xx, or 4xx etc
+				$("#fail").html(result);
+			}).always(function(){
+				//this is a function that gets called at the end of the call, regardless of success or error
+				$("#always").html(result);
+			});
 		});
 	</script>
 </head>
 
 <body>
 
-    <div class="container-fluid">
+    <div class="container-fluid" id="mainStuff">
         <div class="row">
             <div class="col-md-12">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
@@ -99,6 +109,9 @@
 
 
 <div id="divtest"><h2>アカリがやってきたぞっ</h2></div>
+<div id="success"><h2>begin</h2></div>
+<div id="fail"><h2>fimish</h2></div>
+<div id="always"><h2>アカリがきたぞっ</h2></div>
 
 
 </body>
