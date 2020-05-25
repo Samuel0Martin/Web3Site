@@ -20,6 +20,10 @@
 				console.log(name);
 				$("#success").html(result);
 			}});
+			$.ajax({url: "ajaxTest.html", success: function(result){
+				console.log(name);
+				$("#always").html(result);
+			}});
 		});
 	</script>
 </head>
