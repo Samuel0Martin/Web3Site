@@ -70,6 +70,10 @@ def fourth_world():
 @app.route('/endd')
 def endd():
     return render_template('Page3.html'), 200
+	
+@app.route('/pageD3')
+def d3_js():
+    return render_template('PageD3.html')
 
 @app.route('/page5')
 def fifth_world():
