@@ -17,7 +17,8 @@
 			var name = "Bob";
 			console.log(name);
 			$.ajax({url: "ajax.txt", success: function(result){
-			  $("#success").html(result);
+				console.log(name);
+				$("#success").html(result);
 			}});
 		});
 	</script>
