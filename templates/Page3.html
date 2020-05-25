@@ -16,10 +16,10 @@
 		$(document).ready(function(){
 			var name = "Bob";
 			console.log(name);
-			$.ajax({url: "endd", success: function(result){
+			$.ajax({url: "demo_test.txt", success: function(result){
 			  $("#mainStuff").html(result);
 			}});
-			$.get(url: "endd", function(){
+			$.get(url: "ajax.txt", function(){
 				//this is the success function, triggered by 2xx
 				$("#success").html(result);
 			}).fail(function(){
@@ -108,10 +108,9 @@
     </div>
 
 
-<div id="divtest"><h2>アカリがやってきたぞっ</h2></div>
 <div id="success"><h2>begin</h2></div>
-<div id="fail"><h2>fimish</h2></div>
-<div id="always"><h2>アカリがきたぞっ</h2></div>
+<div id="fail"><h3>finish</h3></div>
+<div id="always"><h4>アカリがきたぞっ</h4></div>
 
 
 </body>
