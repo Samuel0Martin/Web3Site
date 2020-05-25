@@ -57,12 +57,6 @@ def return_world():
 
 @app.route('/page3', methods=['GET'])
 def great_world():
-
-	$(document).ready(function(){
-		$('/page3').load();
-		var name = "Bob";
-		console.log(name);
-	});
 	
 	num = random() * 100
 	return 'This is page ' + str(floor(num)) + '.'
