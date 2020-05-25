@@ -63,16 +63,6 @@ def great_world():
 
 @app.route('/page4')
 def fourth_world():
-	var circle = svg.selectAll("circle")
-	  .data(data);
-
-	circle.exit().remove();
-
-	circle.enter().append("circle")
-		.attr("r", 2.5)
-	  .merge(circle)
-		.attr("cx", function(d) { return d.x; })
-		.attr("cy", function(d) { return d.y; });
 	num = random() * 45345645348564853533321323546423097
 	return 'This is the page number: ' + str(floor(num))
 	
