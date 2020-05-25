@@ -69,7 +69,7 @@ def fourth_world():
 	
 @app.route('/endd', methods=['GET'])
 def endd():
-    return render_template('page3.html')
+    return render_template('Page3.html')
 
 @app.route('/page5')
 def fifth_world():
