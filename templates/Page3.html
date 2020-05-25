@@ -16,7 +16,7 @@
 		$(document).ready(function(){
 			var name = "Bob";
 			console.log(name);
-			$.ajax({url: "ajax.txt", success: function(result){
+			$.ajax({url: "{{url_for('static', filename='ajax.txt') }}", success: function(result){
 				console.log(name);
 				$("#success").html(result);
 			}});
