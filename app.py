@@ -54,15 +54,55 @@ def return_world():
 	return json.dumps(dataList)
 			
 
-@app.route('/page3')
+
+@app.route('/page3', methods=['GET'])
 def great_world():
+$.ajax('/jquery/getdata',   // request url
+    {
+        success: function (data, status, xhr) {// success callback function
+            $('p').append(data);
+    }
+});
+
+
+	$.ajax({url: "page3", success: function(result){
+      $("#div1").html(result);
+    }});
+	$(document).ready(function(){
+		$('/page3').load();
+		var name = "Bob";
+		console.log(name);
+	});
+	
 	num = random() * 100
 	return 'This is page ' + str(floor(num)) + '.'
 
+var name;
+$.get("/page3", function(response){
+    name = response.name;
+    console.log(name);
+});
+<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+
 @app.route('/page4')
 def fourth_world():
+var circle = svg.selectAll("circle")
+  .data(data);
+
+circle.exit().remove();
+
+circle.enter().append("circle")
+    .attr("r", 2.5)
+  .merge(circle)
+    .attr("cx", function(d) { return d.x; })
+    .attr("cy", function(d) { return d.y; });
 	num = random() * 45345645348564853533321323546423097
 	return 'This is the page number: ' + str(floor(num))
+	
+	
+@app.route('/endd')
+def endd():
+    return render_template('page3.html')
 
 @app.route('/page5')
 def fifth_world():
