@@ -57,13 +57,6 @@ def return_world():
 
 @app.route('/page3', methods=['GET'])
 def great_world():
-$.ajax('/jquery/getdata',   // request url
-    {
-        success: function (data, status, xhr) {// success callback function
-            $('p').append(data);
-    }
-});
-
 
 	$.ajax({url: "page3", success: function(result){
       $("#div1").html(result);
@@ -82,7 +75,6 @@ $.get("/page3", function(response){
     name = response.name;
     console.log(name);
 });
-<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
 
 @app.route('/page4')
 def fourth_world():
