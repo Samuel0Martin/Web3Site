@@ -58,9 +58,6 @@ def return_world():
 @app.route('/page3', methods=['GET'])
 def great_world():
 
-	$.ajax({url: "page3", success: function(result){
-      $("#div1").html(result);
-    }});
 	$(document).ready(function(){
 		$('/page3').load();
 		var name = "Bob";
