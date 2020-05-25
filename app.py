@@ -55,17 +55,11 @@ def return_world():
 			
 
 
-@app.route('/page3', methods=['GET'])
-def great_world():
-	
+@app.route('/page3')
+def great_world():	
 	num = random() * 100
 	return 'This is page ' + str(floor(num)) + '.'
 
-var name;
-$.get("/page3", function(response){
-    name = response.name;
-    console.log(name);
-});
 
 @app.route('/page4')
 def fourth_world():
@@ -83,7 +77,7 @@ circle.enter().append("circle")
 	return 'This is the page number: ' + str(floor(num))
 	
 	
-@app.route('/endd')
+@app.route('/endd', methods=['GET'])
 def endd():
     return render_template('page3.html')
 
