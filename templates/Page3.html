@@ -16,17 +16,9 @@
 		$(document).ready(function(){
 			var name = "Bob";
 			console.log(name);
-
-			$.ajax(url: "ajax.txt", function(){
-				//this is the success function, triggered by 2xx
-				$("#success").html(result);
-			}).fail(function(){
-				//this is an error function, triggered by 5xx, or 4xx etc
-				$("#fail").html(result);
-			}).always(function(){
-				//this is a function that gets called at the end of the call, regardless of success or error
-				$("#always").html(result);
-			});
+			$.ajax({url: "ajax.txt", fail: function(result){
+			  $("#fail").html(result);
+			}});
 		});
 	</script>
 </head>
