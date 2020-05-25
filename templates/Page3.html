@@ -14,6 +14,8 @@
 	
 	<script>
 		$(document).ready(function(){
+			var name = "Bob";
+			console.log(name);
 			$.ajax({url: "demo_test.txt", success: function(result){
 			  $("#divtest").html(result);
 			}});
