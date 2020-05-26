@@ -46,17 +46,19 @@
 	  <circle cx="330" cy="60" r="17.11724276862369" style="fill:steelblue;"></circle>
 	</svg>
     <script type="text/javascript">
-		var svg = d3.select("svg");
-		var circle = svg.selectAll("circle")
-			.data([32, 57, 112, 293]);
-		var circleEnter = circle.enter().append("circle");
+		var g = d3.select("svg").selectAll("g").data(data);
+	
+		var en = g.enter().append("g")
+			.attr("transform",function(d){ 
+			return "translate("+ (Math.random() * 100) + 40 + "," + (Math.random() * 100) + 40 +")" 
+		});
 		
-		circleEnter.attr("cy", 60);
-		circleEnter.attr("cx", function(d, i) { return i * 100 + 30; });
-		circleEnter.attr("r", function(d) { return Math.sqrt(d); });
+		var circle = en.append("circle")
+			.attr("r",function(d){ return Math.random() * 20 })
+			.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" });
 		
-		circle.style("fill", "steelblue");
-		circle.attr("cx", function() { return Math.random() * 720; });
+		en.append("text").text(function(d){ return d.name });
+	
     </script>
 
 
