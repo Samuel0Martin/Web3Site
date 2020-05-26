@@ -25,9 +25,18 @@
 					$.each(data, function(index, element) {
 						$('body').append($('<div>', {
 							text: element.name
+							console.log(data);
 						}));
 					});
 				}
+			});
+			
+			$.getJSON('/D3Data.html', { get_param: 'value' }, function(data) {
+				$.each(data, function(index, element) {
+					$('body').append($('<div>', {
+						text: element.name
+					}));
+				});
 			});
 		});
 
