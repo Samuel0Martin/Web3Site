@@ -24,7 +24,7 @@
 				success: function (data) { 
 					$.each(data, function(index, element) {
 						$('body').append($('<div>', {
-							text: element.name
+							text: element.name;
 							console.log(data);
 						}));
 					});
@@ -33,7 +33,7 @@
 			
 			$.getJSON('/D3Data.html', { get_param: 'value' }, function(data) {
 				$.each(data, function(index, element) {
-					$('body').append($('<div>', {
+					$('body').append($('success', {
 						text: element.name
 					}));
 				});
@@ -46,6 +46,7 @@
 
 <body>
 
+<div id="success"><h2>begin</h2></div>
 	
 	<svg width="720" height="120">
 	  <circle cx="30" cy="60" r="5.656854249492381" style="fill:steelblue;"></circle>
