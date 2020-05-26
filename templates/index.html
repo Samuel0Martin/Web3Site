@@ -17,7 +17,7 @@
 
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 			<span class="navbar-toggler-icon"></span>
-		</button> <a class="navbar-brand" href="#">Logo Icon</a>
+		</button> <a class="navbar-brand" href="{{ url_for('index') }}"><img src="{{url_for('static', filename='img/logo.png') }}" alt="Logo" style="width: 45px; height: 45px;"></a>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="navbar-nav"></ul>
 
@@ -30,50 +30,12 @@
 					<a class="nav-link" href="#">Empty Link <span class="sr-only">(current)</span></a>
 				</li>
 
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
-						data-toggle="dropdown">Dropdown link (temp)</a>
-					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-						<a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another
-							action</a> <a class="dropdown-item" href="#">Something else
-							here</a>
-						<div class="dropdown-divider">
-						</div> <a class="dropdown-item" href="#">Separated link</a>
-					</div>
-				</li>
 			</ul>
-		</div>
+		</div><br><br><br>
 	</nav>
 
-	<br>
-	
-	<div class="block1">	
-	
-		<div class="wrap">
 		
-			<div class="textA">
-			
-				<h2>Sample Text - Title</h2>
-				<a>Sample text - Sub-Text</a>
-			
-			</div>
-			
-			<div class="imageA">
-			
-						<div class="image" style="text-align: center;">
-							<img src="{{url_for('static', filename='img/snow-image.jfif') }}" alt="SNOW!!">
-						</div>
-			
-			</div>
-		
-		
-		
-		</div>
-	
-	
-	
-	
-	
+	<div class="block1">
 	
 		<div class="container-fluid">
 
@@ -82,13 +44,12 @@
 				<div class="content-container clearfix">
 					<div class="col-6">
 						<div class="content">
-							<h1>Tuesday</h1>
-							<h4>This is sample text.</h4>
+						
 						</div>
 					</div>
 					<div class="col-6">
 						<div class="image" style="text-align: center;">
-							<img src="{{url_for('static', filename='img/snow-image.jfif') }}" alt="SNOW!!">
+							
 						</div>
 					</div>
 				</div>
@@ -101,54 +62,66 @@
 
 		<br>
 		<div class="row">
-			<div class="col-3"><a></a></div>
-			<div class="col-6"><a></a></div>
-			<div class="col-3"><a></a></div>
+			<div class="col-5"><h1>Title</h1><h5>This website is focused on ...</h5></div>
+			<div class="col-7"><img src="{{url_for('static', filename='img/snow-image.jfif') }}" alt="SNOW!!"></div>
 		</div>
 		<br>
-		<h1>Endless</h1>
-
-		<a href="{{ url_for('inspire') }}">Goto Page 2</a>
-
 
 		<div class="row">
-			<div class="col-12"><img src="{{url_for('static', filename='img/snow-image.jfif') }}" alt="SNOW!!"></div>
 			<a href="https://unsplash.com/photos/Xritv4nzDME">Image</a>
 		</div>
 
-	</div>
-
-
-	
+	</div>	
 	
 		</div>	
-		<br><br><br><br>
+		<br><br>
 	
 		<div class="block2" style="padding-top: 70px; padding-bottom: 70px; background-color: #131617;">
 				
-				<div class="wrap" style="padding-left: 70px; padding-right: 70px;">
+			<div class="wrap" style="padding-left: 70px; padding-right: 70px;">
 				
 					<div class="cardGroup" style="color: white; display: grid;">				
 						
-						<div class="cardA" style="padding: 36px; border-bottom: .25rem solid red; flex-direction: column;">
+						<div class="row">
+							<div class="col-4">
+							
+								<div class="cardA" style="padding: 36px; border-bottom: .25rem solid red; flex-direction: column;">
 						
-							<div class="a" style="padding-bottom: 50px;">
-								<a>abc</a>
+									<div class="a" style="padding-bottom: 50px;">
+										<a>a</a>
+								
+										</div>
+										
+										<div class="a">
+											<a>b</a>
+										
+										</div>
+										
+										<div class="a">
+											<a>c</a>
+									
+									</div>					
+							
+								</div>
 							
 							</div>
 							
-							<div class="a">
-								<a>abc</a>
+							<div class="col-4">
+							
+								<div class="cardA" style="padding: 36px; border-top: .25rem solid #98f5df;">
+									<a>abc</a>
+									<a>abc</a>
+								</div>
 							
 							</div>
+							<div class="col-4">
 							
-							<div class="a">
-								<a>abc</a>
-							
-							</div>					
-							
+								<div class="cardA" style="padding: 36px;">
+									<a>abc</a>
+								</div>
+						
+							</div>
 						</div>
-						
 						<div class="cardA" style="padding: 36px; border-top: .25rem solid #98f5df;">
 							<a>abc</a>
 							<a>abc</a>
@@ -157,14 +130,11 @@
 						<div class="cardA" style="padding: 36px;">
 							<a>abc</a>
 						</div>
-						
+	
 					</div>			
 				</div>		
 		</div>
-		<br>
-	
-	
-	
+		<br>	
 	
 		<div class="block3">
 			<div class="wrap" style="padding-left: 70px; padding-right: 70px;">
