@@ -31,6 +31,32 @@
 		$(document).ready(function()
 		{
 			$.ajax({
+				url: "http://10.25.138.109/countries",
+				//force to handle it as text
+				dataType: "text",
+				success: function(data) {
+
+					//data downloaded so we call parseJSON function 
+					//and pass downloaded data
+					var json = $.parseJSON(data);
+					//now json variable contains data in json format
+					//let's display a few items
+					for (var i=0;i<json.length;++i)
+					{
+						$('#results').append('<div class="name">'+json[i].name+'</>');
+					}
+				}
+			});
+		
+		
+		
+		
+		
+		
+		
+		
+		/*
+			$.ajax({
 			  type: 'GET',
 			  url: 'http://10.25.138.109/countries',
 			  data: {get_param: 'value'},
@@ -43,6 +69,11 @@
 			  });
 			  }
 			});
+			
+			var data = [
+			  { "name" : "Canada" },
+			  { "name" : "New Zealand" }
+			];
 
 			var g = d3.select("svg").selectAll("g").data(data);
 		
@@ -55,7 +86,7 @@
 				.attr("r",function(d){ return Math.random() * 20 })
 				.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" });
 			
-			en.append("text").text(function(d){ return d.name });
+			en.append("text").text(function(d){ return d.name });*/
 			
 		});
 	
