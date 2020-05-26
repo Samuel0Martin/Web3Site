@@ -39,12 +39,31 @@
 					//data downloaded so we call parseJSON function 
 					//and pass downloaded data
 					var json = $.parseJSON(data);
+					
+					
+					var g = d3.select("svg").selectAll("g").data(json);
+		
+					var en = g.enter().append("g")
+						.attr("transform",function(d){ 
+						return "translate("+ (Math.random() * 100) + 40 + "," + (Math.random() * 100) + 40 +")" 
+					});
+					
+					var circle = en.append("circle")
+						.attr("r",function(d){ return Math.random() * 20 })
+						.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" });
+					
+					en.append("text").text(function(d){ return d.name });
+					
+					
+					
+					
 					//now json variable contains data in json format
 					//let's display a few items
+					/*
 					for (var i=0;i<json.length;++i)
 					{
 						$('#success').append('<div class="name">'+json[i].name+'</>');
-					}
+					}*/
 				}
 			});
 		
