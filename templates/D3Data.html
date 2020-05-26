@@ -22,9 +22,11 @@
 			  data: {get_param: 'value'},
 			  dataType: 'json',
 			  success: function (data) {
-				var names = data
-				console.log(data);
-				$('#success').append('<div class="name">data[i].name</>');
+			  $.each(data, function(index, element) {
+				$('#success').append($('<div>', {
+					text: element.name
+				}));
+			  });
 			  }
 			});		
 		});
