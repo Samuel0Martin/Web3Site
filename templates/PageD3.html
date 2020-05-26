@@ -28,13 +28,8 @@
     <script type="text/javascript">
 		var svg = d3.select("svg");
 		
-		var data = [1,2,3,4,5];
-		update(data);
-		data = [1,2,3,4,5,6,7];
-		update(data);
-		
 		var circle = svg.selectAll("circle")
-		  .data(data);
+		  .data([32, 57, 112, 293])
 		var circleEnter = circle.enter().append("circle");
 		
 		circle.exit().remove();
