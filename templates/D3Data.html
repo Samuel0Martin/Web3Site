@@ -24,9 +24,9 @@
 			  success: function (data) {
 				var names = data
 				console.log(data);
-				$('#success').html(names);
+				$('#success').append('<div class="name">data[i].name</>');
 			  }
-			});			
+			});		
 		});
 
 	</script>
