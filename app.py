@@ -75,9 +75,10 @@ def endd():
 def d3_js():
     return render_template('PageD3.html')
 	
-@app.route('/D3Data')
+@app.route('/D3Data', methods=['GET'])
 def d3_data():
-    return render_template('D3Data.html')
+	countries = Country.objects
+    return render_template('D3Data.html'), 200
 
 @app.route('/page5')
 def fifth_world():
