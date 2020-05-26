@@ -31,6 +31,8 @@
 			.data([32, 57, 112, 293]);
 		var circleEnter = circle.enter().append("circle");
 		
+		circle.exit().remove();
+		
 		circleEnter.attr("cy", 60);
 		circleEnter.attr("cx", function(d, i) { return i * 100 + 30; });
 		circleEnter.attr("r", function(d) { return Math.sqrt(d); });
