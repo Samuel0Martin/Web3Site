@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<html>
+
+<head>
+
+    <title>D3</title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css') }}">
+
+	<script src="{{url_for('static', filename='scripts/script.js') }}"></script>
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	
+	<script>
+		function(response){
+			var responseObj = JSON.parse(response);
+			console.log(response);
+			console.log(responseObj);
+}
+	</script>
+
+</head>
+
+<body>
+
+	
+	<svg width="720" height="120">
+	  <circle cx="30" cy="60" r="5.656854249492381" style="fill:steelblue;"></circle>
+	  <circle cx="130" cy="60" r="7.54983443527075" style="fill:steelblue;"></circle>
+	  <circle cx="230" cy="60" r="10.583005244258363" style="fill:steelblue;"></circle>
+	  <circle cx="330" cy="60" r="17.11724276862369" style="fill:steelblue;"></circle>
+	</svg>
+    <script type="text/javascript">
+		var svg = d3.select("svg");
+		var circle = svg.selectAll("circle")
+			.data([32, 57, 112, 293]);
+		var circleEnter = circle.enter().append("circle");
+		
+		circleEnter.attr("cy", 60);
+		circleEnter.attr("cx", function(d, i) { return i * 100 + 30; });
+		circleEnter.attr("r", function(d) { return Math.sqrt(d); });
+		
+		circle.style("fill", "steelblue");
+		circle.attr("cx", function() { return Math.random() * 720; });
+    </script>
+
+
+</body>
+
+</html>
