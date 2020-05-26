@@ -13,12 +13,24 @@
 	<script src="{{url_for('static', filename='scripts/script.js') }}"></script>
 	<script src="https://d3js.org/d3.v5.min.js"></script>
 	
-	<script>
-		function(response){
-			var responseObj = JSON.parse(response);
-			console.log(response);
-			console.log(responseObj);
-}
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$.ajax({ 
+				type: 'GET', 
+				url: 'http://10.25.138.109/D3Data', 
+				data: { get_param: 'value' }, 
+				dataType: 'json',
+				success: function (data) { 
+					$.each(data, function(index, element) {
+						$('body').append($('<div>', {
+							text: element.name
+						}));
+					});
+				}
+			});
+		});
+
 	</script>
 
 </head>
