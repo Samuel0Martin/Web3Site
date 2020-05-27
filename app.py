@@ -65,8 +65,9 @@ def db_world():
 			country = Country()
 			dict = {}
 			for key in data:
+				print(key[0])
 				if key == "country":
-					print(data[0])
+					
 					#if col_name in Country():
 						# if the country already exists, replace the blank country with the existing country from the db, and replace the blank dict with the current country's data
 						#print(data)
