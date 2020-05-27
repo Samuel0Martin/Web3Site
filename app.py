@@ -65,8 +65,10 @@ def db_world():
 			country = Country()
 			dict = {}
 			for key in data:
-				print(key:data[key])
-				#if key == "country":					
+				#print(key:data[key])
+				if key == "country":
+					#print("123")
+					print(data[key])
 					#if col_name in Country():
 						# if the country already exists, replace the blank country with the existing country from the db, and replace the blank dict with the current country's data
 						#print(data)
@@ -74,12 +76,12 @@ def db_world():
 						# if the country does not exist, we can use the new blank country we created above, and set the name
 						#Country(name='Country A').add()
 						#print(data)
-				#else:
-					#f = filename.replace(".csv","")
-					#if f in dict:
-						#dict[f][key] = data[key]
-					#else:
-						#dict[f] = {key:data[key]}
+				else:
+					f = filename.replace(".csv","")
+					if f in dict:
+						dict[f][key] = data[key]
+					else:
+						dict[f] = {key:data[key]}
 				# add the data dict to the country
 			# save the country
 			#Country().save()
