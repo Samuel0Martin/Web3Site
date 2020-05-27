@@ -53,7 +53,37 @@ def return_world():
 		dataList.append(d)
 	return json.dumps(dataList)
 			
-
+@app.route('/database')
+def db_world():
+	for file in os.listdir(app.config['FILES_FOLDER']):
+		filename = os.fsdecode(file)
+		path = os.path.join(app.config['FILES_FOLDER'],filename)
+		f = open(path)
+		r = csv.DictReader(f) 
+		d = list(r)
+		for data in d:
+			country = Country()
+			dict = {}
+			for key in data:
+				if key == "country":
+					print(data)
+					#if col_name in Country():
+						# if the country already exists, replace the blank country with the existing country from the db, and replace the blank dict with the current country's data
+						#print(data)
+					#else:
+						# if the country does not exist, we can use the new blank country we created above, and set the name
+						#print(data)
+				else:
+					f = filename.replace(".csv","")
+					if f in dict:
+						dict[f][key] = data[key]
+					else:
+						dict[f] = {key:data[key]}
+				# add the data dict to the country
+			# save the country
+			#Country(name='Country A').save()
+					
+	return 'Created a new Country'
 
 @app.route('/page3')
 def great_world():	
