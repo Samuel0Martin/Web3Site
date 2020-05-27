@@ -69,7 +69,8 @@ def db_world():
 				if key == "country":
 					#print("123")
 					#print(data[key])
-					if db.country.find( { data[key]: { $exists: true } } )
+					#if Country.objects.get(name=data[key])
+					if Country(name=data[key]).find()
 					#if country in Country():
 						print(data[key], " already exists")
 						# if the country already exists, replace the blank country with the existing country from the db, and replace the blank dict with the current country's data
