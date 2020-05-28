@@ -150,19 +150,20 @@ def getCountry(country_name=None):
 	
 @app.route('/countries', methods=['DELETE'])
 def deleteCountry():
-	Country.objects.get(name='Country A').delete()
+	Country.objects.get(name='Afghanistan').delete()
+	Country.objects.get(name='Albania').delete()
+	Country.objects.get(name='Algeria').delete()
+	Country.objects.get(name='Andorra').delete()
+	Country.objects.get(name='Angola').delete()
+	Country.objects.get(name='Austria').delete()
+	Country.objects.get(name='Palau').delete()
+	Country.objects.get(name='Nicaragua').delete()
+	Country.objects.get(name='Lao').delete()
+	Country.objects.get(name='Kenya').delete()
+	Country.objects.get(name='Jamaica').delete()
+	Country.objects.get(name='Iraq').delete()
 	return 'Removed a Country'
 	
-@app.route('/countries/<country_name>', methods=['DELETE'])
-def removeCountry(country_name=None):
-	countries = None
-	if country_name is None:
-		countries = Country.objects
-	else:
-		#countries = Country.objects.get(id=country_name)
-		Country.objects.get(name=country_name).delete()
-	return countries.to_json()
-
 
 if __name__ =="__main__":
     app.run(debug=True, host='0.0.0.0', port=80)
