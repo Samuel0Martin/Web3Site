@@ -20,7 +20,7 @@
 
 <div id="success"><h2>Assignment 01</h2></div>
 	
-	<svg width="1080" height="720">
+	<svg width="1080" height="1080">
 	</svg>
     <script type="text/javascript">
 	
@@ -42,7 +42,7 @@
 		
 					var en = g.enter().append("g")
 						.attr("transform",function(d){ 
-						return "translate("+ (Math.random() * 100) + 40 + "," + (Math.random() * 100) + 40 +")" 
+						return "translate("+ (Math.random() * 900) + 40 + "," + (Math.random() * 900) + 40 +")" 
 					});
 					
 					var circle = en.append("circle")
@@ -51,7 +51,7 @@
 						.on("mouseover", handleMouseOver)
 						.on("mouseout", handleMouseOut);
 					
-					en.append("text").text(function(d){ return d.name });
+					//en.append("text").text(function(d){ return d.name });
 					
 					
 					function handleMouseOver(d, i) {  // Add interactivity
