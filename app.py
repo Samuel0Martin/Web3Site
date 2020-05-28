@@ -150,18 +150,11 @@ def getCountry(country_name=None):
 	
 @app.route('/countries', methods=['DELETE'])
 def deleteCountry():
-	Country.objects.get(name='Afghanistan').delete()
-	Country.objects.get(name='Albania').delete()
-	Country.objects.get(name='Algeria').delete()
-	Country.objects.get(name='Andorra').delete()
-	Country.objects.get(name='Angola').delete()
-	Country.objects.get(name='Austria').delete()
-	Country.objects.get(name='Palau').delete()
-	Country.objects.get(name='Nicaragua').delete()
-	Country.objects.get(name='Lao').delete()
-	Country.objects.get(name='Kenya').delete()
-	Country.objects.get(name='Jamaica').delete()
-	Country.objects.get(name='Iraq').delete()
+	Country.objects.get($oid='5ecf0c579cb26fbfa1cab9b5').delete()
+	Country.objects.get($oid='5ecf0c579cb26fbfa1cab9b7').delete()
+	Country.objects.get($oid='5ecf0c579cb26fbfa1cab9b8').delete()
+	Country.objects.get($oid='5ecf0c579cb26fbfa1caba43').delete()
+	Country.objects.get($oid='5ecf0c579cb26fbfa1cab9e3').delete()
 	return 'Removed a Country'
 	
 
