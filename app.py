@@ -69,8 +69,7 @@ def db_world():
 				if key == "country":
 					#print("123")
 					#print(data[key])
-					doom = Country.objects.get(id=data[key])
-					if doom == data[key]:
+					if Country.objects.get(id=data[key]):
 					#if Country(name=data[key]).find():
 					#if country in Country():
 						print(data[key], " already exists")
