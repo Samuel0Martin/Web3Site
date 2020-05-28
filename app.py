@@ -150,11 +150,8 @@ def getCountry(country_name=None):
 	
 @app.route('/countries', methods=['DELETE'])
 def deleteCountry():
-	Country.objects.get(_id='5ecf0c579cb26fbfa1cab9b5').delete()
-	Country.objects.get(_id='5ecf0c579cb26fbfa1cab9b7').delete()
-	Country.objects.get(_id='5ecf0c579cb26fbfa1cab9b8').delete()
-	Country.objects.get(_id='5ecf0c579cb26fbfa1caba43').delete()
-	Country.objects.get(_id='5ecf0c579cb26fbfa1cab9e3').delete()
+	#Country.objects.get(name='Country A').delete()
+	Country.objects.dropIndexes()
 	return 'Removed a Country'
 	
 
