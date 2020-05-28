@@ -69,7 +69,7 @@ def db_world():
 				if key == "country":
 					#print("123")
 					#print(data[key])
-					doom = Country.objects.get(name=data[key])
+					doom = Country.objects.get(id=data[key])
 					if doom == data[key]:
 					#if Country(name=data[key]).find():
 					#if country in Country():
@@ -78,7 +78,7 @@ def db_world():
 						#print(data)
 					else:
 						# if the country does not exist, we can use the new blank country we created above, and set the name
-						Country(name=data[key]).add()
+						Country(id=data[key]).add()
 						#print(data)
 				else:
 					f = filename.replace(".csv","")
