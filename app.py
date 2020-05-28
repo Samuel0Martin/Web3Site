@@ -153,14 +153,14 @@ def deleteCountry():
 	Country.objects.get(name='Country A').delete()
 	return 'Removed a Country'
 	
-@app.route('/countriesDelete/<country_id>', methods=['DELETE'])
-def removeCountry(country_id=None):
+@app.route('/countries/<country_name>', methods=['DELETE'])
+def removeCountry(country_name=None):
 	countries = None
 	if country_name is None:
 		countries = Country.objects
 	else:
 		#countries = Country.objects.get(id=country_name)
-		Country.objects.get(id=country_id).delete()
+		Country.objects.get(name=country_name).delete()
 	return countries.to_json()
 
 
