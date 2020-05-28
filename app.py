@@ -71,7 +71,7 @@ def db_world():
 					#print("123")
 					#print(data[key])
 					#if Country.objects.get(name=data[key]):
-					if Country.objects.count(name=data[key]) != 0:
+					if Country.objects(name=data[key]):
 					#if Country(name=data[key]).find():
 					#if country in Country():
 						print(data[key], " already exists")
