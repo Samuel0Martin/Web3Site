@@ -63,10 +63,11 @@
 						.data(data)
 						.style("position", "absolute")
 						.enter().append("div")
-						.style("width", function(d) { return x(d) + "px"; })
+						//.style("width", function(d) { return x(d) + "px"; })
+						.style("visibility", "hidden")
 						.text(function(d) { return d; });
 						//.style("z-index", "10")
-						//.style("visibility", "hidden")
+						
 						//.text("a simple tooltip")
 						//.tyme()
 						//.append(tyme);
