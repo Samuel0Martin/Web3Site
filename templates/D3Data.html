@@ -50,7 +50,7 @@
 					//.on('mouseout', tooltip.hide);
 					
 					var circle = en.append("circle")
-						.attr("r",function(d){ return Math.random() * 20 })
+						.attr("r",function(d){ (return Math.random() * 20) + 5})
 						.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" });
 						
 						
@@ -58,7 +58,7 @@
 						
 					var tooltip = d3.select("body")
 						en.append("text")
-						//.style("position", "absolute")
+						.style("position", "absolute")
 						//.style("z-index", "10")
 						.style("visibility", "hidden")
 						.text("a simple tooltip");
@@ -75,7 +75,7 @@
 								.attr('opacity', '.85')
 								.append("text").text(function(d){ return d.name })});*/
 					
-					//en.append("text").text(function(d){ return d.name });					
+					en.append("text").text(function(d){ return d.name });					
 				
 				}
 			});		
