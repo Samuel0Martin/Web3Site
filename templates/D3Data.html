@@ -44,8 +44,10 @@
 						.attr("transform",function(d){
 						return "translate("+ (Math.random() * 900) + 40 + "," + (Math.random() * 900) + 40 +")" 
 					})
-					.on("mouseover", function(){return tooltip.style("visibility", "visible");})
-					.on("mouseout", function(){return tooltip.style("visibility", "hidden");});
+					//.on("mouseover", function(){return tooltip.style("visibility", "visible");})
+					//.on("mouseout", function(){return tooltip.style("visibility", "hidden");});
+					.on('mouseover', tooltip.show)
+					.on('mouseout', tooltip.hide);
 					
 					var circle = en.append("circle")
 						.attr("r",function(d){ return Math.random() * 20 })
@@ -54,14 +56,14 @@
 						
 						
 						
-					var tooltip = d3.select("en")
+					var tooltip = d3.select("circle")
 						//.append("en")
 						//.style("position", "absolute")
 						//.style("z-index", "10")
 						.style("visibility", "hidden")
-						//.text("a simple tooltip");
-						.append("text")
-						.text(function(d){ return d.name });
+						.text("a simple tooltip");
+						//.append("text")
+						//.text(function(d){ return d.name });
 						
 						/*
 					var path = d3.selectAll('path')
