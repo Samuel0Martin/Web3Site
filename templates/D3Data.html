@@ -39,6 +39,11 @@
 					
 					
 					var g = d3.select("svg").selectAll("g").data(json);
+						.on('mouseover', function (d, i) {
+							d3.select(this).transition()
+								.duration('50')
+								.attr('opacity', '.85')
+								.append("text").text(function(d){ return d.name })});
 		
 					var en = g.enter().append("g")
 						.attr("transform",function(d){
@@ -46,13 +51,9 @@
 					});
 					
 					var circle = en.append("circle")
-						.attr("r",function(d){ return Math.random() * 10 })
+						.attr("r",function(d){ return Math.random() * 20 })
 						.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" })
-						.on('mouseover', function (d, i) {
-							d3.select(this).transition()
-								.duration('50')
-								.attr('opacity', '.85')
-								.append("text").text(function(d){ return d.name })});
+						
 					
 					//en.append("text").text(function(d){ return d.name });					
 				
