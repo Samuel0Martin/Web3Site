@@ -67,7 +67,7 @@ def db_world():
 			for key in data:
 				#print(key:data[key])
 				if key == "country":
-					Country(id=data[key]).add()
+					Country(id=data[key]).save()
 					#print("123")
 					#print(data[key])
 					#if Country.objects.get(id=data[key]):
@@ -88,7 +88,7 @@ def db_world():
 						dict[f] = {key:data[key]}
 				# add the data dict to the country
 			# save the country
-			Country().save()
+			##Country().save()
 					
 	return 'Created a new Country'
 
