@@ -49,7 +49,7 @@
 					//.on('mouseover', tooltip.show)
 					//.on('mouseout', tooltip.hide);
 					.on("mouseover", en.append("text").text(function(d){ return d.name }))
-					.on("mouseout", en.append("text").text("");
+					.on("mouseout", en.append("text").text(""));
 					
 					var circle = en.append("circle")
 						.attr("r",function(d){ return Math.random() * 20 + 10})
