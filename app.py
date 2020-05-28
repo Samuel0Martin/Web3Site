@@ -67,7 +67,7 @@ def db_world():
 			for key in data:
 				#print(key:data[key])
 				if key == "country":
-					Country(id=data[key]).save()
+					Country(name=data[key]).save()
 					#print("123")
 					#print(data[key])
 					#if Country.objects.get(id=data[key]):
