@@ -43,20 +43,34 @@
 					var en = g.enter().append("g")
 						.attr("transform",function(d){
 						return "translate("+ (Math.random() * 900) + 40 + "," + (Math.random() * 900) + 40 +")" 
-					});
+					})
+					.on("mouseover", function(){return tooltip.style("visibility", "visible");})
+					.on("mouseout", function(){return tooltip.style("visibility", "hidden");});
 					
 					var circle = en.append("circle")
 						.attr("r",function(d){ return Math.random() * 20 })
 						.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" });
 						
-					var path = svg.selectAll('path')
+						
+						
+						
+					var tooltip = d3.select("body")
+						.append("div")
+						.style("position", "absolute")
+						.style("z-index", "10")
+						.style("visibility", "hidden")
+						.text("a simple tooltip");
+						//.append("text").text(function(d){ return d.name })
+						
+						/*
+					var path = d3.selectAll('path')
 						.enter()
 						.append('path')
 						.on('mouseover', function (d, i) {
 							d3.select(this).transition()
 								.duration('50')
 								.attr('opacity', '.85')
-								.append("text").text(function(d){ return d.name })});
+								.append("text").text(function(d){ return d.name })});*/
 					
 					//en.append("text").text(function(d){ return d.name });					
 				
