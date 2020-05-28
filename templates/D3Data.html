@@ -44,12 +44,12 @@
 						.attr("transform",function(d){
 						return "translate("+ (Math.random() * 900) + 40 + "," + (Math.random() * 900) + 40 +")" 
 					})
-					//.on("mouseover", function(){return tooltip.style("visibility", "visible");})
-					//.on("mouseout", function(){return tooltip.style("visibility", "hidden");});
+					.on("mouseover", function(){return tooltip.style("visibility", "visible");})
+					.on("mouseout", function(){return tooltip.style("visibility", "hidden");});
 					//.on('mouseover', tooltip.show)
 					//.on('mouseout', tooltip.hide);
-					.on("mouseover", en.append("text").text(function(d){ return d.name }))
-					.on("mouseout", en.append("text").text(""));
+					//.on("mouseover", en.append("text").text(function(d){ return d.name }))
+					//.on("mouseout", en.append("text").text(""));
 					
 					var circle = en.append("circle")
 						.attr("r",function(d){ return Math.random() * 20 + 10})
@@ -57,16 +57,23 @@
 						
 						
 						
-					/*
+					
 					var tooltip = d3.select("body")
-						en.append("text")
+						.selectAll("div")
+						.data(data)
 						.style("position", "absolute")
+						.enter().append("div")
+						.style("width", function(d) { return x(d) + "px"; })
+						.text(function(d) { return d; }));
 						//.style("z-index", "10")
-						.style("visibility", "hidden")
-						.text("a simple tooltip");
-						//.append("text")
+						//.style("visibility", "hidden")
+						//.text("a simple tooltip")
+						//.tyme()
+						//.append(tyme);
 						//.text(function(d){ return d.name });
-						*/
+						
+						
+					//var tyme = return d.name;
 						/*
 					var path = d3.selectAll('path')
 						.enter()
