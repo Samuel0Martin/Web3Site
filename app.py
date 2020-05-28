@@ -70,7 +70,8 @@ def db_world():
 					#Country(name=data[key]).save()
 					#print("123")
 					#print(data[key])
-					if Country.objects.get(name=data[key]):
+					#if Country.objects.get(name=data[key]):
+					if Country.objects.count(name=data[key]) != 0:
 					#if Country(name=data[key]).find():
 					#if country in Country():
 						print(data[key], " already exists")
@@ -150,10 +151,9 @@ def getCountry(country_name=None):
 	
 @app.route('/countries', methods=['DELETE'])
 def deleteCountry():
-	#Country.objects.get(name='Country A').delete()
-	Country.objects.delete()
+	Country.objects.get(name='Country A').delete()
+	#Country.objects.delete() #Delete all
 	return 'Removed a Country'
-	
 
 if __name__ =="__main__":
     app.run(debug=True, host='0.0.0.0', port=80)
