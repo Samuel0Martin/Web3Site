@@ -56,11 +56,11 @@
 						
 					var tooltip = d3.select("body")
 						.append("div")
-						.style("position", "absolute")
-						.style("z-index", "10")
+						//.style("position", "absolute")
+						//.style("z-index", "10")
 						.style("visibility", "hidden")
-						.text("a simple tooltip");
-						//.append("text").text(function(d){ return d.name })
+						//.text("a simple tooltip");
+						.append("text").text(function(d){ return d.name });
 						
 						/*
 					var path = d3.selectAll('path')
