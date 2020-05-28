@@ -18,13 +18,9 @@
 
 <body>
 
-<div id="success"><h2>begin</h2></div>
+<div id="success"><h2>Assignment 01</h2></div>
 	
-	<svg width="720" height="120">
-	  <circle cx="30" cy="60" r="5.656854249492381" style="fill:steelblue;"></circle>
-	  <circle cx="130" cy="60" r="7.54983443527075" style="fill:steelblue;"></circle>
-	  <circle cx="230" cy="60" r="10.583005244258363" style="fill:steelblue;"></circle>
-	  <circle cx="330" cy="60" r="17.11724276862369" style="fill:steelblue;"></circle>
+	<svg width="1080" height="720">
 	</svg>
     <script type="text/javascript">
 	
@@ -51,12 +47,42 @@
 					
 					var circle = en.append("circle")
 						.attr("r",function(d){ return Math.random() * 20 })
-						.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" });
+						.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" })
+						.on("mouseover", handleMouseOver)
+						.on("mouseout", handleMouseOut);
 					
 					en.append("text").text(function(d){ return d.name });
 					
 					
-					
+					function handleMouseOver(d, i) {  // Add interactivity
+
+						// Use D3 to select element, change color and size
+						d3.select(this).attr({
+						  fill: "orange",
+						  r: radius * 2
+						});
+
+						// Specify where to put label of text
+						svg.append("text").attr({
+						   id: "t" + d.x + "-" + d.y + "-" + i,  // Create an id for text so we can select it later for removing on mouseout
+							x: function() { return xScale(d.x) - 30; },
+							y: function() { return yScale(d.y) - 15; }
+						})
+						.text(function() {
+						  return [d.name];  // Value of the text
+						});
+					  }
+
+					function handleMouseOut(d, i) {
+						// Use D3 to select element, change color back to normal
+						d3.select(this).attr({
+						  fill: "black",
+						  r: radius
+						});
+
+						// Select text by id and then remove
+						d3.select("#t" + d.x + "-" + d.y + "-" + i).remove();  // Remove text location
+					}
 					
 					//now json variable contains data in json format
 					//let's display a few items
