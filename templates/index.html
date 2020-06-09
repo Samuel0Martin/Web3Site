@@ -69,7 +69,7 @@
 		<br>
 		<div class="row">
 			<div class="col-5"><h1>Title</h1><h5>This website is focused on countries</h5></div>
-			<div class="col-7"><img src="{{url_for('static', filename='img/Globe.svg') }}" alt="Globe Image" style="height: 80%;"></div>
+			<div class="col-7"><img src="{{url_for('static', filename='img/Globe.svg') }}" alt="Globe Image" style="height: 90%;"></div>
 		</div>
 		<br>
 
@@ -99,7 +99,7 @@
 								</div>
 										
 								<div class="a">
-									<a>Link</a>										
+									<a href="{{ url_for('d3_data') }}">Link</a>										
 								</div>
 										
 								<div class="a">
@@ -119,7 +119,7 @@
 								</div>
 										
 								<div class="a">
-									<a>Link</a>										
+									<a href="{{ url_for('d3_data') }}">Link</a>										
 								</div>
 										
 								<div class="a">
@@ -136,7 +136,7 @@
 								</div>
 										
 								<div class="a">
-									<a>Link</a>										
+									<a href="{{ url_for('inspire') }}">Link</a>										
 								</div>
 										
 								<div class="a">
@@ -153,7 +153,7 @@
 	
 		<div class="block3">
 			<div class="wrap" style="padding-left: 70px; padding-right: 70px;">
-				<div class="Title" style="text-align: center;">
+				<div class="TileTitle" style="text-align: center;">
 					<a style="text-align: center; font-size: 30px;">Tiles</a>
 				</div>
 				<br>
@@ -161,16 +161,20 @@
 				<div class="Items" style="display: grid;">
 					<div class="row" style="50%; margin-left: auto; margin-right: auto;">
 						<div class="Tile" style="padding-left: 20px; padding-right: 20px;">
-							<a>aa</a>
+							<a>Assignment 01</a>
+							<p>Compare values on a graph.</p>
 						</div>
 						<div class="Tile" style="padding-left: 20px; padding-right: 20px;">
-							<a>bb</a>
+							<a>Assignment 02</a>
+							<p>Edit a country.</p>
 						</div>
 						<div class="Tile" style="padding-left: 20px; padding-right: 20px;">
-							<a>cc</a>
+							<a>Inspirations</a>
+							<p>Inspirations from other sites.</p>
 						</div>
 						<div class="Tile" style="padding-left: 20px; padding-right: 20px;">
-							<a>dd</a>
+							<a>Data</a>
+							<p>Load data into the database or check that it exists.</p>
 						</div>
 					</div>
 				</div>

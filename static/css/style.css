@@ -51,6 +51,12 @@ img
 	flex-direction: column;
 }
 
+.Tile
+{
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
 @media (max-width: 768px)
 {
 	.cardGroup
