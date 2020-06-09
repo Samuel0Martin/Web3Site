@@ -68,9 +68,8 @@ def db_world():
 				#print(key:data[key])
 				if key == "country":
 					#Country(name=data[key]).save()
-					#print("123")
-					#print(data[key])
 					#if Country.objects.get(name=data[key]):
+					#Check if a country name already exists in the database.
 					if Country.objects(name=data[key]):
 					#if Country(name=data[key]).find():
 					#if country in Country():
