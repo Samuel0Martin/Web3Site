@@ -94,8 +94,8 @@ def db_world():
 					
 	return 'Created a new Country'
 
-@app.route('/loadData')
-def loadallData():
+@app.route('/databaseData')
+def loadToDatabase():
     for file in os.listdir(app.config['FILES_FOLDER']):
         filename = os.fsdecode(file)
         path = os.path.join(app.config['FILES_FOLDER'],filename)
