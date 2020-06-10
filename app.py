@@ -96,8 +96,8 @@ def db_world():
 
 @app.route('/loadData')
 def loadallData():
-	for file in os.listdir(app.config['FILES_FOLDER']):
-		filename = os.fsdecode(file)
+    for file in os.listdir(app.config['FILES_FOLDER']):
+        filename = os.fsdecode(file)
         path = os.path.join(app.config['FILES_FOLDER'],filename)
         f = open(path)
         r = csv.DictReader(f) 
@@ -124,7 +124,7 @@ def loadallData():
                         dir[f] = {key:data[key]} # if it is not, create a new object and assign it to the dict
                 country['data'] = dir
             country.save()
-	return Country.objects.to_json() , 200
+    return Country.objects.to_json() , 200
 
 
 @app.route('/page3')
