@@ -55,14 +55,6 @@
 						.attr("r",function(d){ return Math.random() * 20 + 10})
 						.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" });
 						
-						
-					svg.append("g")
-						.attr("class", "x axis")
-						.attr("transform", "translate(0," + height + ")");
-
-						// Add the y-axis.
-					svg.append("g")
-						.attr("class", "y axis");
 					
 					var tooltip = d3.select("body")
 						.selectAll("svg")
@@ -91,7 +83,15 @@
 								.attr('opacity', '.85')
 								.append("text").text(function(d){ return d.name })});*/
 					
-					en.append("text").text(function(d){ return d.name });				
+					en.append("text").text(function(d){ return d.name });
+					
+					g.append("svg")
+						.attr("class", "x axis")
+						.attr("transform", "translate(0," + height + ")");
+
+						// Add the y-axis.
+					g.append("svg")
+						.attr("class", "y axis");					
 				
 				}
 			});		
