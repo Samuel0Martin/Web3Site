@@ -163,7 +163,7 @@ def all_world():
 	return Country.objects.to_json()
 	
 @app.route('/datadata3')
-def all_world():
+def all_in_world():
 	for country in Country.objects:
 		print(country.data)
 	return Country.objects.to_json()
