@@ -51,7 +51,7 @@
 					//.on("mouseout", en.append("text").text(""));
 					
 					var circle = en.append("circle")
-						.data(d => d.name)
+						//.data(d => d.name)
 						.attr("r",function(d){ return Math.random() * 20 + 10})
 						.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" });
 						
