@@ -147,7 +147,7 @@ def endd():
 def d3_js():
     return render_template('PageD3.html')
 	
-@app.route('/D3Data', methods=['GET'])
+@app.route('/D3Data')
 def d3_data():
 	countries = Country.objects
 	return render_template('D3Data.html'), Country.objects.to_json()
