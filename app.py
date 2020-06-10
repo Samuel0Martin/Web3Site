@@ -19,6 +19,7 @@ class User(Document):
 
 class Country(Document):
     name = StringField()
+	data = DictField()
 
 @app.route('/')
 @app.route('/index')
@@ -92,6 +93,39 @@ def db_world():
 			##Country().save()
 					
 	return 'Created a new Country'
+
+@app.route('/loadData')
+def loadallData():
+	for file in os.listdir(app.config['FILES_FOLDER']):
+		filename = os.fsdecode(file)
+        path = os.path.join(app.config['FILES_FOLDER'],filename)
+        f = open(path)
+        r = csv.DictReader(f) 
+        d = list(r)
+        for data in d:
+            country = Country() # a blank placeholder country
+            dir = {} # a blank placeholder data dict
+            for key in data: # iterate through the header keys
+                if key == "country":
+                    # check if this country already exists in the db
+                    if Country.objects(name = data[key]).count() == 0:
+                       country['name'] = data[key]
+                    # if the country does not exist, we can use the new blank country we created above, and set the name
+                    else:
+                        # if the country already exists, replace the blank country with the existing country from the db, and replace the blank dict with the current country's 
+                        country = Country.objects.get(name = data[key])
+                        # data
+                        dir = country['data']                            
+                else:
+                    f = filename.replace(".csv","") # we want to trim off the ".csv" as we can't save anything with a "." as a mongodb field name
+                    if f in dir: # check if this filename is already a field in the dict
+                        dir[f][key] = data[key] # if it is, just add a new subfield which is key : data[key] (value)
+                    else:
+                        dir[f] = {key:data[key]} # if it is not, create a new object and assign it to the dict
+                country['data'] = dir
+            country.save()
+	return Country.objects.to_json() , 200
+
 
 @app.route('/page3')
 def great_world():	
