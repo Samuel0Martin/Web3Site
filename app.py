@@ -149,8 +149,9 @@ def d3_js():
 	
 @app.route('/D3Data')
 def d3_data():
-	countries = Country.objects
-	return render_template('D3Data.html'), Country.objects.to_json()
+	#countries = Country.objects
+	#return render_template('D3Data.html'), Country.objects.to_json()
+	return render_template('D3Data.html')
 
 @app.route('/page5')
 def fifth_world():
