@@ -52,6 +52,8 @@
 					//.on("mouseout", en.append("text").text(""));
 					
 					var circle = en.append("circle")
+						.data(d => d.name)
+						.attr("cx", d => x(d.co2_emissions_tonnes_per_person))
 						.attr("r",function(d){ return Math.random() * 20 + 10})
 						.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" });
 						
