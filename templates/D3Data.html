@@ -56,7 +56,13 @@
 						.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" });
 						
 						
-						
+					svg.append("g")
+						.attr("class", "x axis")
+						.attr("transform", "translate(0," + height + ")");
+
+						// Add the y-axis.
+					svg.append("g")
+						.attr("class", "y axis");
 					
 					var tooltip = d3.select("body")
 						.selectAll("svg")
