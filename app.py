@@ -162,6 +162,11 @@ def all_world():
 		print(country.name)
 	return Country.objects.to_json()
 	
+@app.route('/datadata3')
+def all_world():
+	for country in Country.objects:
+		print(country.data)
+	return Country.objects.to_json()
 	
 @app.route('/countries', methods=['POST'])
 def addCountry():
