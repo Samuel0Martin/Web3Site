@@ -19,7 +19,7 @@ class User(Document):
 
 class Country(Document):
     name = StringField()
-	data = DictField()
+    data = DictField()
 
 @app.route('/')
 @app.route('/index')
