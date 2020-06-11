@@ -55,6 +55,7 @@ img
 {
 	padding-left: 30px;
 	padding-right: 30px;
+	width: 25%;
 }
 
 @media (max-width: 768px)
