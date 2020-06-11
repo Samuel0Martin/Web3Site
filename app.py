@@ -2,11 +2,13 @@ from flask import Flask, render_template, redirect
 from random import random
 from math import floor
 from mongoengine import *
+from flask_cors import CORS
 import os
 import csv
 import json
 
 app = Flask(__name__)
+CORS(app)
 
 app.config.from_object('config')
 
