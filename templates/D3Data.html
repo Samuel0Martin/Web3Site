@@ -17,6 +17,33 @@
 
 <body>
 
+	<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			<span class="navbar-toggler-icon"></span>
+		</button> <a class="navbar-brand" href="{{ url_for('index') }}"><img src="{{url_for('static', filename='img/logoGlobe.png') }}" alt="Logo" style="width: 50px; height: 50px;"></a>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="navbar-nav"></ul>
+
+			<ul class="navbar-nav ml-md-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="{{ url_for('inspire') }}">Inspirations <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="{{ url_for('d3_data') }}">D3 Graph<span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="http://10.25.138.109:3000/">Country Data<span class="sr-only">(current)</span></a>
+				</li>
+
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Empty Link <span class="sr-only">(current)</span></a>
+				</li>
+
+			</ul>
+		</div><br><br><br>
+	</nav>
+
 	<div id="success"><h2>Assignment 01</h2></div>
 	
 	<svg width="1080" height="1080">
