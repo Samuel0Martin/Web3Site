@@ -20,6 +20,9 @@ class CountrySearch extends React.Component {
 				planets: initialPlanets,
 			});
 		});
+		return (
+			<Planet state={this.state}/>
+		);
 	}
 }
 
