@@ -49,9 +49,6 @@ class Countries extends React.Component {
 				countries: countries,
 			});
 		});
-		return (
-			<Planet state={this.state}/>
-		);
 	}
 
 	render() {
@@ -74,6 +71,6 @@ class Countries extends React.Component {
 	}
 }
 
-export default Countries;
+//export default Countries;
 
 ReactDOM.render(<Countries />, document.getElementById('react-search'));
