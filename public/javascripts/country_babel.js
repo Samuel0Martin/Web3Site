@@ -39,15 +39,12 @@ class Countries extends React.Component {
 				<select>
 					{countriesList}
 				</select>
-				/*
-				<button onClick={() => this.setState({ liked: true }) }>
-					Like
-				</button>*/
-				<br/>
+				
+				<br/><br/>
 				<button>
 					Update Country
 				</button>
-				<br/>
+				<br/><br/>
 				<button>
 					Delete Country
 				</button>
