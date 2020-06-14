@@ -41,7 +41,7 @@ class Countries extends React.Component {
 			.then(response => {
 				return response.json();
 			}).then(data => {
-				console.log(data);
+				console.log(data.name);
 			countries = data.results.map((name) => {
 				return name
 			});
