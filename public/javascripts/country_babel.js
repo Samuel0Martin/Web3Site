@@ -73,6 +73,6 @@ class Countries extends React.Component {
 	}
 }
 
-export default Countries;
+//export default Countries;
 
 ReactDOM.render(<Countries />, document.getElementById('react-search'));
