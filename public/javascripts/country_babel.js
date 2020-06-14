@@ -54,24 +54,24 @@ class Countries extends React.Component {
 		);
 
 
-  render () {
-    const { countries } = this.state;
+	render () {
+		const { countries } = this.state;
 
-    let countriesList = countries.length > 0
-    	&& countries.map((item, i) => {
-      return (
-        <option key={i} value={item.id}>{item.name}</option>
-      )
-    }, this);
+		let countriesList = countries.length > 0
+			&& countries.map((item, i) => {
+				return (
+					<option key={i} value={item.id}>{item.name}</option>
+				)
+			}, this);
 
-    return (
-      <div>
-        <select>
-          {countriesList}
-        </select>
-      </div>
-    );
-  }
+		return (
+			<div>
+				<select>
+					{countriesList}
+				</select>
+			</div>
+		);
+	}
 }
 
 export default Countries;
