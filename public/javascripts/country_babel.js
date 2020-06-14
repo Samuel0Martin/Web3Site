@@ -52,9 +52,9 @@ class Countries extends React.Component {
 		return (
 			<Planet state={this.state}/>
 		);
+	}
 
-
-	render () {
+	render() {
 		const { countries } = this.state;
 
 		let countriesList = countries.length > 0
