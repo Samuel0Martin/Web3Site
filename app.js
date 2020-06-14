@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var countryListRouter = require('./routes/countrylist');
 var crossGameRouter = require('./routes/crossgame');
+var endListRouter = require('./routes/endlist');
 
 var app = express();
 
@@ -25,6 +26,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/country-list', countryListRouter);
 app.use('/cross-game', crossGameRouter);
+app.use('/end', endListRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
