@@ -1,4 +1,4 @@
-class CountrySearch extends Component {
+class CountrySearch extends React.Component {
 	constructor() {
 		super();
 		this.state = {
