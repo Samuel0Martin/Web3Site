@@ -65,6 +65,7 @@ class Countries extends React.Component {
 
 		return (
 			<div>
+				<h2>Select a Country</h2>
 				<select>
 					{countriesList}
 				</select>
