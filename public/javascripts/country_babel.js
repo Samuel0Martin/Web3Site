@@ -6,18 +6,18 @@ class CountrySearch extends Component {
 		};
 	}
 
-	let initialPlanets;
-	initialPlanets = [];
+	let status;
+	status = [];
 	fetch('http://10.25.138.109/countries')
 		.then(response => {
 			return response.json();
 		}).then(data => {
-		initialPlanets = data.results.map((planet) => {
+		status = data.results.map((planet) => {
 			return planet
 		});
-		console.log(initialPlanets);
+		console.log(status);
 		this.setState({
-			planets: initialPlanets,
+			planets: status,
 		});
 	});	
 }
