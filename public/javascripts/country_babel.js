@@ -12,8 +12,8 @@ class CountrySearch extends Component {
 			.then(response => {
 				return response.json();
 			}).then(data => {
-			initialPlanets = data.results.map((planet) => {
-				return planet
+			initialPlanets = data.results.map((name) => {
+				return name
 			});
 			console.log(initialPlanets);
 			this.setState({
