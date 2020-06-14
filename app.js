@@ -41,15 +41,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-/*
-app.get('/', function (req, res) {
-  res.send('<h1>hello world<h1>')
-})*/
-
-//app.listen(3000);
 
 
 module.exports = app;
-/*
-app.listen(8080, () => console.log(`Example app listening on port ${port}!`))
-*/
