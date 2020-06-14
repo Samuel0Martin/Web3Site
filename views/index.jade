@@ -8,6 +8,14 @@ html
 			h1= title
 			p Welcome to #{title}
 			p Hello #{title} World
+			
+			div(id="react-search")
+			script(src="https://unpkg.com/react@16/umd/react.development.js" crossorigin)
+			script(src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin)
+			script(src="https://unpkg.com/babel-standalone@6/babel.min.js" crossorigin)
+			script(src="/javascripts/country_babel.js", type='text/babel')
+			
+			br
 			p Name :
 			p Population :
 			div(id="country_container")
@@ -23,12 +31,7 @@ html
 				br
 				br
 				button Delete this country
-			div(id="react-search")
-			script(src="https://unpkg.com/react@16/umd/react.development.js" crossorigin)
-			script(src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin)
-			script(src="https://unpkg.com/babel-standalone@6/babel.min.js" crossorigin)
-			script(src="/javascripts/country_babel.js", type='text/babel')
-			
+				br
 			
 			div(id="like_button_container")
 			script(src="https://unpkg.com/react@16/umd/react.development.js" crossorigin)
