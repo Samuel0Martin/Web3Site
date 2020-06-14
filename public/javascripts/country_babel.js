@@ -66,6 +66,7 @@ class Countries extends React.Component {
 		return (
 			<div>
 				<select>
+					{id: '0', name: 'Please Select'},
 					{countriesList}
 				</select>
 			</div>
@@ -73,6 +74,6 @@ class Countries extends React.Component {
 	}
 }
 
-//export default Countries;
+export default Countries;
 
 ReactDOM.render(<Countries />, document.getElementById('react-search'));
