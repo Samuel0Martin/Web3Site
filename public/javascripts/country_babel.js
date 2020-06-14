@@ -5,11 +5,9 @@ class CountrySearch extends Component {
             planets: [],
         };
     }
-}
-
-componentDidMount() {
-    let initialPlanets = [];
-    fetch('https://swapi.co/api/planets/')
+	
+	let initialPlanets = [];
+    fetch('http://10.25.138.109/countries')
         .then(response => {
             return response.json();
         }).then(data => {
@@ -20,7 +18,7 @@ componentDidMount() {
         this.setState({
             planets: initialPlanets,
         });
-    });
+    });	
 }
 	
 ReactDOM.render(<CountrySearch />, document.getElementById('react-search'));
