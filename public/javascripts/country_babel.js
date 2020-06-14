@@ -6,7 +6,8 @@ class CountrySearch extends Component {
 		};
 	}
 
-	let initialPlanets = [];
+	let initialPlanets;
+	initialPlanets = [];
 	fetch('http://10.25.138.109/countries')
 		.then(response => {
 			return response.json();
