@@ -41,10 +41,10 @@ class Countries extends React.Component {
 			.then(response => {
 				return response.json();
 			}).then(data => {
-				console.log(data);/*
+			/*	console.log(data);
 			countries = data.results.map((name) => {
-				return name*/
-			});
+				return name
+			});*/
 			console.log(countries);
 			this.setState({
 				countries: countries,
