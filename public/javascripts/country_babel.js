@@ -5,21 +5,22 @@ class CountrySearch extends Component {
 			planets: [],
 		};
 	}
-
-	let status;
-	status = [];
-	fetch('http://10.25.138.109/countries')
-		.then(response => {
-			return response.json();
-		}).then(data => {
-		status = data.results.map((planet) => {
-			return planet
+	
+	render() {
+		let initialPlanets = [];
+		fetch('http://10.25.138.109/countries')
+			.then(response => {
+				return response.json();
+			}).then(data => {
+			initialPlanets = data.results.map((planet) => {
+				return planet
+			});
+			console.log(initialPlanets);
+			this.setState({
+				planets: initialPlanets,
+			});
 		});
-		console.log(status);
-		this.setState({
-			planets: status,
-		});
-	});	
+	}
 }
 
 ReactDOM.render(<CountrySearch />, document.getElementById('react-search'));
