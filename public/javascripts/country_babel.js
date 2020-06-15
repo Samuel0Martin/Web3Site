@@ -40,9 +40,9 @@ class Countries extends React.Component {
 		this.setState({title: event.target.value})
 	}
 	
-	deleteCountry(event)
+	deleteCountry(countryName)
 	{
-		if(window.confirm('Are you sure??')
+		if(window.confirm('Are you sure????'))
 		{
 			console.log(countryName);
 		}
