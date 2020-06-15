@@ -29,7 +29,7 @@ class Countries extends React.Component {
 		let countriesList = countries.length > 0
 			&& countries.map((item, i) => {
 				return (
-					<option key={i} value={item.id}>{item.name}</option>
+					<option key={i} value={item.name}>{item.name}</option>
 				)
 			}, this);
 
