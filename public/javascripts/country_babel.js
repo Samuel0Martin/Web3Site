@@ -72,7 +72,7 @@ class Countries extends React.Component {
 					Update Country
 				</button>
 				<br/><br/>
-				<button className="del" }>
+				<button className="del" >
 					Delete Country
 				</button>
 			</div>
