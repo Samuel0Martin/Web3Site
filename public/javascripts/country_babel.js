@@ -3,7 +3,7 @@ class Countries extends React.Component {
 		super(props);
 		this.state = {
 			countries: [],
-			value: 'coconut'
+			value: 'Country A'
 		};
 	}
 
@@ -46,7 +46,7 @@ class Countries extends React.Component {
 				</select>
 				
 				<br/><br/>
-				<a>Name : + this.state.value</a>
+				<a>Name : <var>this.state.value</var></a>
 				<br/><br/>
 				<a>Value :</a>
 				
