@@ -41,6 +41,11 @@ class Countries extends React.Component {
 				</select>
 				
 				<br/><br/>
+				<a>Name :</a>
+				<br/><br/>
+				<a>Value :</a>
+				
+				<br/><br/>
 				<button>
 					Update Country
 				</button>
