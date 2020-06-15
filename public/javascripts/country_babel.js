@@ -42,7 +42,7 @@ class Countries extends React.Component {
 	
 	deleteCountry(event)
 	{
-		if(window.confirm('Are you sure??' + {title}))
+		if(window.confirm('Are you sure??' + {event.target.value}))
 		{
 			console.log(countryName);
 		}
