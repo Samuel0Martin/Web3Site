@@ -46,6 +46,7 @@ class Countries extends React.Component {
 				<a>Value :</a>
 				
 				<br/><br/>
+				<input type="text" />
 				<button>
 					Update Country
 				</button>
