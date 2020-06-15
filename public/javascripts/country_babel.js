@@ -68,7 +68,7 @@ class Countries extends React.Component {
 				<br/><br/>
 				<a>Name : {this.state.value}</a>
 				<br/><br/>
-				<a>Value :</a>
+				<a>Value : {this.state.title}</a>
 				
 				<br/><br/>
 				<input type="text" name="title" value={this.state.title} onChange={this.updateInput}/>
