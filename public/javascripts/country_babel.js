@@ -37,7 +37,7 @@ class Countries extends React.Component {
 		//this.setState({nameOf : event.target.nameOf})
 		//console.log({this.state.nameOf});
 		this.setState({title: event.target.value})
-		console.log({this.state.title});
+		console.log({event.target.value});
 	}
 	
 	deleteCountry(countryName)
