@@ -22,6 +22,10 @@ class Countries extends React.Component {
 			});
 		});
 	}
+	
+	handleChange(event) {
+		this.setState({value: event.target.value});
+	}
 
 	render() {
 		const { countries } = this.state;
@@ -36,7 +40,7 @@ class Countries extends React.Component {
 		return (
 			<div>
 				<h3>Select a Country</h3>
-				<select value={optionsState}>
+				<select value={this.state.value} onChange={this.handleChange}>
 					{countriesList}
 				</select>
 				
