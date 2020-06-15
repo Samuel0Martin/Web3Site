@@ -34,7 +34,7 @@ class Countries extends React.Component {
 	
 	updateInput(event){
 		this.setState({nameOf : event.target.nameOf})
-		console.log({nameOf});
+		console.log({state.nameOf});
 	}
 	
 	deleteCountry(countryName)
