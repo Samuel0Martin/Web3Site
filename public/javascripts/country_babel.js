@@ -76,7 +76,7 @@ class Countries extends React.Component {
 					Update Country
 				</button>
 				<br/><br/>
-				<button className="del" value={state.title} onClick={() => this.deleteCountry() }>
+				<button className="del" value={this.state.title} onClick={() => this.deleteCountry() }>
 					Delete Country
 				</button>
 			</div>
