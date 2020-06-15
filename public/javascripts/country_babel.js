@@ -5,6 +5,7 @@ class Countries extends React.Component {
 			countries: [],
 			value: 'Country A'
 		};
+		this.handleChange = this.handleChange.bind(this);
 	}
 
 	componentDidMount() {
@@ -46,7 +47,7 @@ class Countries extends React.Component {
 				</select>
 				
 				<br/><br/>
-				<a>Name : <var>this.state.value</var></a>
+				<a>Name : {this.state.value}</a>
 				<br/><br/>
 				<a>Value :</a>
 				
