@@ -45,7 +45,7 @@ class Countries extends React.Component {
 				</select>
 				
 				<br/><br/>
-				<a>Name :</a>
+				<a>Name : + this.state.value</a>
 				<br/><br/>
 				<a>Value :</a>
 				
