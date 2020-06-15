@@ -17,7 +17,7 @@ class Countries extends React.Component {
 			countries = data.results.map((name) => {
 				return name
 			});*/
-			console.log(data);
+			console.log(data.name);
 			//console.log(countries);
 			this.setState({
 				countries: data,
