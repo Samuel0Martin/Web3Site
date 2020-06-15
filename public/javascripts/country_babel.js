@@ -2,7 +2,8 @@ class Countries extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			countries: []
+			countries: [],
+			value: 'coconut'
 		};
 	}
 
