@@ -4,7 +4,7 @@ class Countries extends React.Component {
 		this.state = {
 			countries: [],
 			value: 'Country A',
-			nameOf: 'a'
+			nameOf: ''
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.updateInput = this.updateInput.bind(this);
@@ -34,6 +34,7 @@ class Countries extends React.Component {
 	
 	updateInput(event){
 		this.setState({nameOf : event.target.nameOf})
+		console.log({nameOf});
 	}
 	
 	deleteCountry(countryName)
@@ -67,7 +68,7 @@ class Countries extends React.Component {
 				<a>Value :</a>
 				
 				<br/><br/>
-				<input type="text" value={this.state.nameOf} onChange={this.updateInput}/>
+				<input type="text" onChange={this.updateInput}/>
 				<button>
 					Update Country
 				</button>
