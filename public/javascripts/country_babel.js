@@ -3,9 +3,11 @@ class Countries extends React.Component {
 		super(props);
 		this.state = {
 			countries: [],
-			value: 'Country A'
+			value: 'Country A',
+			nameOf: ''
 		};
 		this.handleChange = this.handleChange.bind(this);
+		this.updateInput = this.updateInput.bind(this);
 	}
 
 	componentDidMount() {
@@ -17,7 +19,7 @@ class Countries extends React.Component {
 			countries = data.results.map((name) => {
 				return name
 			});*/
-			console.log(data.name);
+			console.log(data);
 			//console.log(countries);
 			this.setState({
 				countries: data,
@@ -25,8 +27,21 @@ class Countries extends React.Component {
 		});
 	}
 	
-	handleChange(event) {
+	handleChange(event)
+	{
 		this.setState({value: event.target.value});
+	}
+	
+	updateInput(event){
+		this.setState({nameOf : event.target.value})
+	}
+	
+	deleteCountry(countryName)
+	{
+		if(window.confirm('Are you sure????'))
+		{
+			console.log(countryName);
+		}
 	}
 
 	render() {
@@ -52,12 +67,12 @@ class Countries extends React.Component {
 				<a>Value :</a>
 				
 				<br/><br/>
-				<input type="text" />
+				<input type="text" onChange={this.updateInput}/>
 				<button>
 					Update Country
 				</button>
 				<br/><br/>
-				<button>
+				<button className="del" onClick={() => this.deleteCountry({this.state.nameOf}) }>
 					Delete Country
 				</button>
 			</div>
