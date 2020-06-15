@@ -67,12 +67,12 @@ class Countries extends React.Component {
 				<a>Value :</a>
 				
 				<br/><br/>
-				<input type="text" onChange={this.updateInput}/>
+				<input type="text" value={this.state.nameOf} onChange={this.updateInput}/>
 				<button>
 					Update Country
 				</button>
 				<br/><br/>
-				<button className="del" onClick={this.deleteCountry(aaa) }>
+				<button className="del" onClick={this.deleteCountry({nameOf}) }>
 					Delete Country
 				</button>
 			</div>
