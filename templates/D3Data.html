@@ -63,8 +63,8 @@
 					var json = $.parseJSON(data);
 					
 					
-					for (name in json)
-						console.log(name)
+					for (name in d)
+						console.log(d.name)
 					
 					var g = d3.select("svg").selectAll("g").data(json);
 		
