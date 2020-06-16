@@ -62,10 +62,13 @@
 					//and pass downloaded data
 					var json = $.parseJSON(data);
 					
+					console.log(data)
 					
 					var g = d3.select("svg").selectAll("g").data(json);
 		
 					var en = g.enter().append("g")
+					    .on("mouseover", mouseover )
+						.on("mouseleave", mouseleave )
 						.attr("transform",function(d){
 						return "translate("+ (Math.random() * 900) + 40 + "," + (Math.random() * 900) + 40 +")" 
 					})
@@ -81,6 +84,17 @@
 						.attr("r",function(d){ return Math.random() * 20 + 10})
 						.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" });
 						
+					var mouseover = function(d) {
+						tooltip
+							.style("opacity", 1)
+					}
+					
+					var mouseleave = function(d) {
+						tooltip
+							.transition()
+							.duration(200)
+							.style("opacity", 0)
+					}
 					
 					var tooltip = d3.select("body")
 						.selectAll("svg")
