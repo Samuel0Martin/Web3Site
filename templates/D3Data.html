@@ -100,7 +100,7 @@
 							.attr("transform",
 								"translate(" + margin.left + "," + margin.top + ")");
 
-					d3.url("http://10.25.138.109/countries",function(data){
+					d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/2_TwoNum.csv",function(data){
 
 						var x = d3.scaleLinear()
 							.domain([0, 4000])
