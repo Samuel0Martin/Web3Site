@@ -100,7 +100,7 @@
 							.attr("transform",
 								"translate(" + margin.left + "," + margin.top + ")");
 
-					d3.csv("http://10.25.138.109/countries",function(data){
+					d3.url("http://10.25.138.109/countries",function(data){
 
 						var x = d3.scaleLinear()
 							.domain([0, 4000])
@@ -125,8 +125,8 @@
 							.append("circle")
 								.attr("cx", function (d) { return x(d.GrLivArea); } )
 								.attr("cy", function (d) { return y(d.SalePrice); } )
-								.attr("r", 1.5)
-								.style("fill", "#69b3a2")
+								.attr("r", function(d){ return Math.random() * 20 + 10})
+								.style("fill", function(d,i){ return i % 2 == 0 ? "red" : "blue" })
 
 					})
 
