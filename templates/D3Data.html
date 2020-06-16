@@ -75,6 +75,8 @@
 					//and pass downloaded data
 					var json = $.parseJSON(data);
 					
+					console.log(json);
+					
 					var example_array = {
 						ValueA : 'co2_emissions_tonnes_per_person',
 						ValueB : 'electricity_use_per_person',
@@ -103,7 +105,7 @@
 					//d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/2_TwoNum.csv",function(data){
 					d3.json("http://10.25.138.109/countries",function(data){
 					
-						console.log(data);
+						
 
 						var x = d3.scaleLinear()
 							.domain([0, 4000])
