@@ -45,6 +45,21 @@
 
 	<div id="success"><h2>Assignment 01</h2></div>
 	
+	<a>X : </a>
+	<select name="argX" id="argX">
+		<option value="volvo">A</option>
+		<option value="saab">B</option>
+		<option value="mercedes">C</option>
+		<option value="audi">D</option>
+	</select>
+	
+	<a>Y : </a>
+	<select name="argY" id="argY">
+		<option value="volvo">A</option>
+		<option value="saab">B</option>
+		<option value="mercedes">C</option>
+	</select>
+	
 	<svg width="1080" height="1080">
 	</svg>
     <script type="text/javascript">
@@ -126,7 +141,7 @@
 								.append("text").text(function(d){ return d.name })});*/
 					
 					//en.append("text").text(function(d){ return d.name });
-					en.append("text").text(function(d){ return d.surface_area_sq_km });
+					en.append("text").text(function(d){ return d.data.surface_area_sq_km });
 					
 					g.append("svg")
 						.attr("class", "x axis");
