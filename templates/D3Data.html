@@ -46,7 +46,7 @@
 	<div id="success"><h2>Assignment 01</h2></div>
 	
 	<a>X : </a>
-	<select name="argX" id="argX">
+	<select name="XAxis" id="XAxis">
 		<option value="volvo">A</option>
 		<option value="saab">B</option>
 		<option value="mercedes">C</option>
@@ -54,10 +54,7 @@
 	</select>
 	<br>
 	<a>Y : </a>
-	<select name="argY" id="argY">
-		<option value="volvo">A</option>
-		<option value="saab">B</option>
-		<option value="mercedes">C</option>
+	<select name="YAxis" id="YAxis">
 	</select>
 	
 	<svg width="1080" height="1080">
@@ -77,9 +74,20 @@
 					//and pass downloaded data
 					var json = $.parseJSON(data);
 					
+					var example_array = {
+						ValueA : 'Text A',
+						ValueB : 'Text B',
+						ValueC : 'Text C'
+					};
 					
+					var select = document.getElementById("YAxis");
+					for(index in example_array) {
+						select.options[select.options.length] = new Option(example_array[index], index);
+					}
+					
+					/*
 					for (name in data)
-						console.log(data.name)
+						console.log(data.name)*/
 					
 					var g = d3.select("svg").selectAll("g").data(json);
 		
