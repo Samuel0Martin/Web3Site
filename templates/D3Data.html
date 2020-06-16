@@ -53,6 +53,7 @@
 	<a>Y : </a>
 	<select name="YAxis" id="YAxis">
 	</select>
+	<br>
 	
 	<svg width="1080" height="1080">
 	</svg>
@@ -84,8 +85,18 @@
 						selectY.options[selectY.options.length] = new Option(example_array[index], index);
 					}
 					
+					//var svg = d3.select("#my_dataviz")
+
 					
-					var g = d3.select("svg").selectAll("g").data(json);
+					
+					
+					var g = d3.select("svg").selectAll("g").data(json)
+						.append("svg")
+							.attr("width", width + margin.left + margin.right)
+							.attr("height", height + margin.top + margin.bottom)
+						.append("g")
+							.attr("transform",
+								"translate(" + margin.left + "," + margin.top + ")");
 		
 					var en = g.enter().append("g")
 					    .on("mouseover", mouseover)
