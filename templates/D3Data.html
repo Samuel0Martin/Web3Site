@@ -52,7 +52,7 @@
 		<option value="mercedes">C</option>
 		<option value="audi">D</option>
 	</select>
-	
+	<br>
 	<a>Y : </a>
 	<select name="argY" id="argY">
 		<option value="volvo">A</option>
@@ -77,15 +77,15 @@
 					//and pass downloaded data
 					var json = $.parseJSON(data);
 					
-					/*
-					for (name in d)
-						console.log(d.name)*/
+					
+					for (name in data)
+						console.log(data.name)
 					
 					var g = d3.select("svg").selectAll("g").data(json);
 		
 					var en = g.enter().append("g")
-					    .on("mouseover", mouseover )
-						.on("mouseleave", mouseleave )
+					    .on("mouseover", mouseover)
+						.on("mouseleave", mouseleave)
 						.attr("transform",function(d){
 						return "translate("+ (Math.random() * 900) + 40 + "," + (Math.random() * 900) + 40 +")" 
 					});
@@ -140,8 +140,8 @@
 								.attr('opacity', '.85')
 								.append("text").text(function(d){ return d.name })});*/
 					
-					//en.append("text").text(function(d){ return d.name });
-					en.append("text").text(function(d){ return d.data.surface_area_sq_km });
+					en.append("text").text(function(d){ return d.name });
+					//en.append("text").text(function(d){ return d.data.surface_area_sq_km });
 					
 					g.append("svg")
 						.attr("class", "x axis");
