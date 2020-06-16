@@ -62,7 +62,9 @@
 					//and pass downloaded data
 					var json = $.parseJSON(data);
 					
-					console.log(data.name)
+					
+					for (name in data)
+						console.log(name)
 					
 					var g = d3.select("svg").selectAll("g").data(json);
 		
@@ -95,7 +97,7 @@
 							.duration(200)
 							.style("opacity", 0)
 					}
-					
+					/*
 					var tooltip = d3.select("body")
 						.selectAll("svg")
 						.data(data)
@@ -103,7 +105,7 @@
 						.enter().append("div")
 						//.style("width", function(d) { return x(d) + "px"; })
 						.style("visibility", "hidden")
-						.text(function(d) { return d.name; });
+						.text(function(d) { return d.name; });*/
 						//.style("z-index", "10")
 						
 						//.text("a simple tooltip")
@@ -130,7 +132,7 @@
 
 						// Add the y-axis.
 					g.append("svg")
-						.attr("class", "y axis");					
+						.attr("class", "y axis");
 				
 				}
 			});		
