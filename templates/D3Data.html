@@ -135,7 +135,7 @@
 
 
 
-				
+				/*
 					
 					
 					var g = d3.select("svg").selectAll("g").data(json);
@@ -169,7 +169,7 @@
 					
 					var circle = en.append("circle")
 						//.data(d => d.name)
-						//.attr("cx", function (d) { return x(d.data); } )
+						.attr("cx", function (d) { return x(d.data); } )
 						
 						//.attr("cy", function (d) { return y(d["data"][electricity_use_per_person][year]); } )
 						.attr("r",function(d){ return Math.random() * 20 + 10})
@@ -185,9 +185,9 @@
 							.transition()
 							.duration(200)
 							.style("opacity", 0)
-					}
+					}*/
 					
-					console.log(function(d){ return d.name })
+					//console.log(function(d){ return d.name })
 					/*
 					var tooltip = d3.select("body")
 						.selectAll("svg")
@@ -204,19 +204,9 @@
 						//.append(tyme);
 						//.text(function(d){ return d.name });
 						
-						
-					//var tyme = return d.name;
-						/*
-					var path = d3.selectAll('path')
-						.enter()
-						.append('path')
-						.on('mouseover', function (d, i) {
-							d3.select(this).transition()
-								.duration('50')
-								.attr('opacity', '.85')
-								.append("text").text(function(d){ return d.name })});*/
 					
-					en.append("text").text(function(d){ return d.name });
+					//en.append("text").text(function(d){ return d.name });
+					
 					//en.append("text").text(function(d){ return d.data.surface_area_sq_km });
 					/*
 					g.append("svg")
