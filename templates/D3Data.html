@@ -47,12 +47,9 @@
 	
 	<a>X : </a>
 	<select name="XAxis" id="XAxis">
-		<option value="volvo">A</option>
-		<option value="saab">B</option>
-		<option value="mercedes">C</option>
-		<option value="audi">D</option>
 	</select>
 	<br>
+	
 	<a>Y : </a>
 	<select name="YAxis" id="YAxis">
 	</select>
@@ -75,19 +72,18 @@
 					var json = $.parseJSON(data);
 					
 					var example_array = {
-						ValueA : 'Text A',
-						ValueB : 'Text B',
-						ValueC : 'Text C'
+						ValueA : 'co2_emissions_tonnes_per_person',
+						ValueB : 'electricity_use_per_person',
+						ValueC : 'surface_area_sq_km'
 					};
 					
-					var select = document.getElementById("YAxis");
+					var selectX = document.getElementById("XAxis");
+					var selectY = document.getElementById("YAxis");
 					for(index in example_array) {
-						select.options[select.options.length] = new Option(example_array[index], index);
+						selectX.options[selectX.options.length] = new Option(example_array[index], index);
+						selectY.options[selectY.options.length] = new Option(example_array[index], index);
 					}
 					
-					/*
-					for (name in data)
-						console.log(data.name)*/
 					
 					var g = d3.select("svg").selectAll("g").data(json);
 		
