@@ -160,7 +160,16 @@
 					.enter()
 					.append("circle")
 					.attr("cx", function(d) {
+					
+						if(d && d['data'] && d['data'][dataset1] && d['data'][dataset1][2000] && d['data'][dataset2] && d['data'][dataset2][2000])
+							return "translate("+ xScale(d['data'][dataset1][2000]) + 40 + "," + yScale(d['data'][dataset2][2000]) + 40 +")"
+						else
+							return "translate(-1000,-1000)"
+					})
+					
+					
 					  //console.log(d);
+					  /*
 					  if(d && d.data && d.data[dataset1] && d.data[dataset1][2000])
 					  	return x(d.data[dataset1][2000]);//Returns the value for cx for data from dataset1 in the year 2016
 					  else	  
@@ -171,7 +180,7 @@
 					  	return y(d.data[dataset2][2000]);//Returns the value for cy for data from dataset2 in the year 2016
 					  else		  
 					  	return y(0)
-					})
+					})*/
 					.attr("r",function(d){ return 10 })
 					.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" });
 					
