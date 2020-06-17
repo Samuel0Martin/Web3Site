@@ -82,7 +82,7 @@
 
 					for(key in json){
 						if(json.hasOwnProperty(key)){
-							data.push({'name' : json[key].name, 'value' : json[key]});
+							data.push({'name' : json[key].name, 'value' : json[key].data});
 							key += 1;
 						}
 					}
