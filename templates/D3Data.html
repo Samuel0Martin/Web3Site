@@ -108,7 +108,7 @@
 						selectX.options[selectX.options.length] = new Option(example_array[index], index);
 						selectY.options[selectY.options.length] = new Option(example_array[index], index);
 					}
-					
+					/*
 					var margin = {top: 10, right: 30, bottom: 30, left: 60},
 						width = 460 - margin.left - margin.right,
 						height = 400 - margin.top - margin.bottom;
@@ -119,7 +119,7 @@
 							.attr("height", height + margin.top + margin.bottom)
 						.append("g")
 							.attr("transform",
-								"translate(" + margin.left + "," + margin.top + ")");
+								"translate(" + margin.left + "," + margin.top + ")");*/
 /*
 					//d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/2_TwoNum.csv",function(data){
 					d3.json("http://10.25.138.109/countries",function(data){
@@ -212,9 +212,24 @@
 						.attr("r",function(d){ return Math.random() * 20 + 10})
 						.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" });
 				
+				
+					var data = responseObj;
+					var extent = d3.extent(data);
+
+
+					var linearScale = d3.scaleLinear()
+					.domain(extent)
+					.range([0, 600]);
+
+
+					var axis = d3.axisBottom(linearScale);
+					d3.select('.axis')
+					.call(axis);
+					});				
+				/*
 					svg
 						.call(xScale)
-						.call(xScale);
+						.call(xScale);*/
 					
 					/*
 					var g = d3.select("svg").selectAll("g").data(json);
