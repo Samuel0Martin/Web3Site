@@ -79,6 +79,7 @@
 					
 					var key;
 					var data = [];
+					var year = '2000';
 
 					for(key in json){
 						if(json.hasOwnProperty(key)){
@@ -164,6 +165,12 @@
 
 
 
+					var circle = en.append("circle")
+						//.data(d => d.name)
+						.attr("cx", function (d) { return x(d.data); } )						
+						.attr("cy", function (d) { return y(d.data); } )
+						.attr("r",function(d){ return Math.random() * 20 + 10})
+						.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" });
 				
 					
 					/*
