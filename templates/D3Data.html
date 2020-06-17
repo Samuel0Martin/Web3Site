@@ -162,13 +162,23 @@
 						.range([ height, 0]);
 					svg.append("g")
 						.call(d3.axisLeft(y));
+						
 
+					var g = d3.select("svg").selectAll("g").data(json);
 
+					var en = g.enter().append("g")
+						.attr("transform",function(d){
+						//return "translate("+ (Math.random() * 900) + 40 + "," + (Math.random() * 900) + 40 +")" 
+						if(d && d['data'] && d['data'][dataset1] && d['data'][dataset1][2000] && d['data'][dataset2] && d['data'][dataset2][2000])
+							return "translate("+ xScale(d['data'][dataset1][2000]) + 40 + "," + yScale(d['data'][dataset2][2000]) + 40 +")"
+						else
+							return "translate(-1000,-1000)"
+					});
 
 					var circle = en.append("circle")
 						//.data(d => d.name)
-						.attr("cx", function (d) { return x(d.data); } )						
-						.attr("cy", function (d) { return y(d.data); } )
+						//.attr("cx", function (d) { return x(d.data); } )						
+						//.attr("cy", function (d) { return y(d.data); } )
 						.attr("r",function(d){ return Math.random() * 20 + 10})
 						.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" });
 				
