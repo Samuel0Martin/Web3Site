@@ -200,8 +200,8 @@
 						.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" });
 				
 					svg
-						.call(xAxis)
-						.call(yAxis);
+						.call(xScale)
+						.call(xScale);
 					
 					/*
 					var g = d3.select("svg").selectAll("g").data(json);
