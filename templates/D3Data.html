@@ -66,7 +66,8 @@
 		{
 			$.ajax({
 				//Get all the countries from the countries page.
-				url: "http://10.25.138.109/countries",
+				//url: "http://10.25.138.109/countries",
+				$.get("/countries",
 				//force to handle it as text
 				dataType: "text",
 				success: function(data) {
@@ -74,6 +75,7 @@
 					//data downloaded so we call parseJSON function 
 					//and pass downloaded data
 					var json = $.parseJSON(data);
+					console.log(json);
 					
 					//console.log(json);
 					
@@ -91,7 +93,7 @@
 						}
 					}
 					
-					console.log(data);
+					//console.log(data);
 					
 					var example_array = {
 						ValueA : 'co2_emissions_tonnes_per_person',
