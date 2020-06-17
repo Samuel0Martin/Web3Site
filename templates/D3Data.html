@@ -223,7 +223,8 @@
 						//.data(d => d.name)
 						//.attr("cx", function (d) { return x(d.data); } )						
 						//.attr("cy", function (d) { return y(d.data); } )
-						.attr("r",function(d){ return Math.random() * 20 + 10})
+						//.attr("r",function(d){ return Math.random() * 20 + 10})
+						.attr("r",function(d){ return 20 })
 						.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" });
 				
 				
