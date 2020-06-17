@@ -90,6 +90,13 @@
 				ValueB : 'electricity_use_per_person',
 				ValueC : 'surface_area_sq_km'
 			};
+			
+			var selectX = document.getElementById("XAxis");
+			var selectY = document.getElementById("YAxis");
+			for(index in example_array) {
+				selectX.options[selectX.options.length] = new Option(example_array[index], index);
+				selectY.options[selectY.options.length] = new Option(example_array[index], index);
+			}
 		
 	//$.get("/countries", function(response) {
 				  //var responseObj = JSON.parse(response);
@@ -153,7 +160,7 @@
 					.enter()
 					.append("circle")
 					.attr("cx", function(d) {
-					  console.log(d);
+					  //console.log(d);
 					  if(d && d.data && d.data[dataset1] && d.data[dataset1][2000])
 					  	return x(d.data[dataset1][2000]);//Returns the value for cx for data from dataset1 in the year 2016
 					  else	  
@@ -165,7 +172,7 @@
 					  else		  
 					  	return y(0)
 					})
-					.attr("r",function(d){ return 20 })
+					.attr("r",function(d){ return 10 })
 					.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" });
 					
 				  }); 
