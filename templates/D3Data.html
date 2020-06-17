@@ -102,6 +102,10 @@
 						ValueC : 'surface_area_sq_km'
 					};
 					
+					var margin = { top: 10, right: 20, bottom: 30, left: 50 },
+						width = 600 - margin.left - margin.right,
+						height = 600 - margin.top - margin.bottom;
+					
 					var selectX = document.getElementById("XAxis");
 					var selectY = document.getElementById("YAxis");
 					for(index in example_array) {
