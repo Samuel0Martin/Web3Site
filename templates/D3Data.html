@@ -113,7 +113,7 @@
 						.append("g")
 							.attr("transform",
 								"translate(" + margin.left + "," + margin.top + ")");
-
+/*
 					//d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/2_TwoNum.csv",function(data){
 					d3.json("http://10.25.138.109/countries",function(data){
 					
@@ -145,16 +145,28 @@
 								.attr("r", function(d){ return Math.random() * 20 + 10})
 								.style("fill", function(d,i){ return i % 2 == 0 ? "red" : "blue" })
 
-					})
+					})*/
 
 
-
+					var x = d3.scaleLinear()
+						.domain([0, 4000])
+						.range([ 0, width ]);
+					svg.append("g")
+						.attr("transform", "translate(0," + height + ")")
+						.call(d3.axisBottom(x));
+							
+					// Add Y axis
+					var y = d3.scaleLinear()
+						.domain([0, 500000])
+						.range([ height, 0]);
+					svg.append("g")
+						.call(d3.axisLeft(y));
 
 
 
 				
 					
-					
+					/*
 					var g = d3.select("svg").selectAll("g").data(json);
 		
 					var en = g.enter().append("g")
@@ -170,25 +182,12 @@
 					//.on("mouseover", en.append("text").text(function(d){ return d.name }))
 					//.on("mouseout", en.append("text").text(""));
 					
-					var x = d3.scaleLinear()
-						.domain([0, 4000])
-						.range([ 0, width ]);
-					svg.append("g")
-						.attr("transform", "translate(0," + height + ")")
-						.call(d3.axisBottom(x));
-							
-					// Add Y axis
-					var y = d3.scaleLinear()
-						.domain([0, 500000])
-						.range([ height, 0]);
-					svg.append("g")
-						.call(d3.axisLeft(y));
+
 					
 					var circle = en.append("circle")
 						//.data(d => d.name)
-						.attr("cx", function (d) { return x(d.data); } )
-						
-						//.attr("cy", function (d) { return y(d["data"][electricity_use_per_person][year]); } )
+						.attr("cx", function (d) { return x(d.data); } )						
+						.attr("cy", function (d) { return y(d.data); } )
 						.attr("r",function(d){ return Math.random() * 20 + 10})
 						.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" });
 						
