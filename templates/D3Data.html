@@ -162,7 +162,7 @@
 					.attr("cx", function(d) {
 					
 						if(d && d['data'] && d['data'][dataset1] && d['data'][dataset1][2000] && d['data'][dataset2] && d['data'][dataset2][2000])
-							return "translate("+ xScale(d['data'][dataset1][2000]) + 40 + "," + yScale(d['data'][dataset2][2000]) + 40 +")"
+							return "translate("+ x(d['data'][dataset1][2000]) + 40 + "," + y(d['data'][dataset2][2000]) + 40 +")"
 						else
 							return "translate(-1000,-1000)"
 					})
