@@ -218,6 +218,17 @@
 						
 
 					var g = d3.select("svg").selectAll("g").data(json);
+					
+					var xScale = d3.scaleLinear()
+						.domain([0, 1])
+						.range([0, 1000]);
+
+
+					//set yScale
+					var yScale = d3.scaleLinear()
+						.domain([0, 20000])
+						.range([0, 800]);
+					
 
 					var en = g.enter().append("g")
 						.attr("transform",function(d){
@@ -237,15 +248,7 @@
 						.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" });
 						
 						
-					var xScale = d3.scaleLinear()
-						.domain([0, 1])
-						.range([0, 1000]);
 
-
-					//set yScale
-					var yScale = d3.scaleLinear()
-						.domain([0, 20000])
-						.range([0, 800]);
 				
 				
 					var data = json;
