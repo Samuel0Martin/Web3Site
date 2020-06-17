@@ -75,7 +75,18 @@
 					//and pass downloaded data
 					var json = $.parseJSON(data);
 					
-					console.log(json);
+					//console.log(json);
+					
+					var key;
+					var data = [];
+
+					for(key in json){
+						if(json.hasOwnProperty(key)){
+							data.push({'name' : key, 'value' : rawData[key]});
+						}
+					}
+					
+					console.log(data);
 					
 					var example_array = {
 						ValueA : 'co2_emissions_tonnes_per_person',
