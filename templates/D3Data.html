@@ -55,10 +55,12 @@
 	</select>
 	<br>
 	
+
+	
+	<div id="background-destruction">
 	<svg width="1080" height="1080">
 	</svg>
-	
-	<div id="background-destruction"></div>
+	</div>
 	
     <script type="text/javascript">
 	/*
@@ -154,7 +156,7 @@
 
 					})*/
 
-
+/*
 					var xScale = d3.scaleLinear()
 						.domain([0, 4000])
 						.range([ 0, width ]);
@@ -167,7 +169,7 @@
 						.domain([0, 500000])
 						.range([ height, 0]);
 					svg.append("g")
-						.call(d3.axisLeft(yScale));
+						.call(d3.axisLeft(yScale));*/
 						
 						
 					var xScale = d3.scaleLinear()
@@ -179,6 +181,19 @@
 					var yScale = d3.scaleLinear()
 						.domain([0, 20000])
 						.range([0, 800]);
+						
+						/*
+					svg
+						.append(g)
+						.*/
+
+
+
+						
+					//var xAxis
+					
+					//var yAxis
+					
 						
 
 					var g = d3.select("svg").selectAll("g").data(json);
