@@ -169,6 +169,17 @@
 					svg.append("g")
 						.call(d3.axisLeft(yScale));
 						
+						
+					var xScale = d3.scaleLinear()
+						.domain([0, 1])
+						.range([0, 1000]);
+
+
+					//set yScale
+					var yScale = d3.scaleLinear()
+						.domain([0, 20000])
+						.range([0, 800]);
+						
 
 					var g = d3.select("svg").selectAll("g").data(json);
 
@@ -188,6 +199,9 @@
 						.attr("r",function(d){ return Math.random() * 20 + 10})
 						.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" });
 				
+					svg
+						.call(xAxis)
+						.call(yAxis);
 					
 					/*
 					var g = d3.select("svg").selectAll("g").data(json);
