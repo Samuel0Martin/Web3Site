@@ -83,22 +83,11 @@
 					var json = $.parseJSON(data);
 					//console.log(json);
 					
-				
-					//var key;
-					//var data = [];
+					//Data set names
 					var dataset1 = 'co2_emissions_tonnes_per_person';
 					var dataset2 = 'electricity_use_per_person';
 					var dataset3 = 'surface_area_sq_km';
 					//var year = '2000';
-/*
-					for(key in json){
-						if(json.hasOwnProperty(key)){
-							data.push({'name' : json[key].name, 'valueA' : json[key].data});
-							key += 1;
-						}
-					}*/
-					
-					//console.log(data);
 					
 					var example_array = {
 						ValueA : 'co2_emissions_tonnes_per_person',
@@ -107,8 +96,8 @@
 					};
 					
 					var margin = { top: 10, right: 20, bottom: 30, left: 50 },
-						width = 600 - margin.left - margin.right,
-						height = 600 - margin.top - margin.bottom;
+						width = 800 - margin.left - margin.right,
+						height = 700 - margin.top - margin.bottom;
 						
 						
 					var svg = d3.select("#d3")
