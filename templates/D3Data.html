@@ -70,8 +70,8 @@
 		{
 			$.ajax({
 				//Get all the countries from the countries page.
-				url: "http://10.25.138.109/countries",
-				//$.get("/countries",
+				//url: "http://10.25.138.109/countries",
+				$.get("/countries",
 				//force to handle it as text
 				dataType: "text",
 				success: function(data) {
@@ -125,51 +125,6 @@
 						selectX.options[selectX.options.length] = new Option(example_array[index], index);
 						selectY.options[selectY.options.length] = new Option(example_array[index], index);
 					}
-					/*
-					var margin = {top: 10, right: 30, bottom: 30, left: 60},
-						width = 460 - margin.left - margin.right,
-						height = 400 - margin.top - margin.bottom;
-					
-					var svg = d3.select("#background-destruction")
-						.append("svg")
-							.attr("width", width + margin.left + margin.right)
-							.attr("height", height + margin.top + margin.bottom)
-						.append("g")
-							.attr("transform",
-								"translate(" + margin.left + "," + margin.top + ")");*/
-
-					//d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/2_TwoNum.csv",function(data){
-/*					d3.json("http://10.25.138.109/countries",function(data){
-					
-						
-
-						var x = d3.scaleLinear()
-							.domain([0, 4000])
-							.range([ 0, width ]);
-						svg.append("g")
-							.attr("transform", "translate(0," + height + ")")
-							.call(d3.axisBottom(x));
-							
-						// Add Y axis
-						var y = d3.scaleLinear()
-							.domain([0, 500000])
-							.range([ height, 0]);
-						svg.append("g")
-							.call(d3.axisLeft(y));
-							
-							
-						// Add dots
-						svg.append('g')
-							.selectAll("dot")
-							.data(data)
-							.enter()
-							.append("circle")
-								.attr("cx", function (d) { return x(d.GrLivArea); } )
-								.attr("cy", function (d) { return y(d.SalePrice); } )
-								.attr("r", function(d){ return Math.random() * 20 + 10})
-								.style("fill", function(d,i){ return i % 2 == 0 ? "red" : "blue" })
-
-					})*/
 
 					//Add the X Axis of the graph
 					var xScale = d3.scaleLinear()
@@ -191,7 +146,7 @@
 					
 					var en = g.enter().append("g")
 						.attr("transform",function(d){
-							//return "translate("+ xScale(d['data'][dataset1]) + "," + yScale(d['data'][dataset2]) +")"
+							//return "translate("+ xScale(d['data'][dataset1]) + 40 + "," + yScale(d['data'][dataset2]) + 40 +")"
 							return "translate("+ (Math.random() * 600) + 40 + "," + (Math.random() * 600) + 40 +")" 
 						});
 /*
@@ -205,8 +160,6 @@
 					});*/
 
 					var circle = en.append("circle")
-						//.attr("cx", function (d) { return x(d['data'][dataset1]); } )						
-						//.attr("cy", function (d) { return y(d['data'][dataset2]); } )
 						//.attr("r",function(d){ return Math.random() * 20 + 10})					
 						.attr("r",function(d){ return 20 })							
 						.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" });
