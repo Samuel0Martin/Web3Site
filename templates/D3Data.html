@@ -184,23 +184,7 @@
 						.domain([0, 500000])
 						.range([ height, 0]);
 					svg.append("g")
-						.call(d3.axisLeft(yScale));
-						
-						
-
-						
-						/*
-					svg
-						.append(g)
-						.*/
-
-
-
-						
-					//var xAxis
-					
-					//var yAxis
-					
+						.call(d3.axisLeft(yScale));					
 						
 
 					var g = d3.select("svg").selectAll("g").data(json);
@@ -230,6 +214,7 @@
 						//.attr("cx", function (d) { return x(d.data); } )						
 						//.attr("cy", function (d) { return y(d.data); } )
 						//.attr("r",function(d){ return Math.random() * 20 + 10})
+						console.log(d);
 						.attr("r",function(d){ return 20 })
 						.attr("fill",function(d,i){ return i % 2 == 0 ? "red" : "blue" });
 						
