@@ -202,7 +202,7 @@
 					
 					var en = g.enter().append("g")
 						.attr("transform",function(d){
-							return "translate("+ xScale(d['data'][dataset1]) + 40 + "," + yScale(d['data'][dataset2]) + 40 +")"
+							return "translate("+ xScale(d['data'][dataset1]) + "," + yScale(d['data'][dataset2]) +")"
 						});
 /*
 					var en = g.enter().append("g")
