@@ -23,12 +23,14 @@ class Country(Document):
     name = StringField()
     data = DictField()
 
+#Main Index page
 @app.route('/')
 @app.route('/index')
 @app.route('/home')
 def index():
     return render_template('index.html')
-	
+
+#Inspiration Page
 @app.route('/inspire')
 @app.route('/inspiration')
 def inspire():
@@ -55,7 +57,8 @@ def return_world():
 		d = list(r)
 		dataList.append(d)
 	return json.dumps(dataList)
-			
+
+#Only adds countries
 @app.route('/database')
 def db_world():
 	for file in os.listdir(app.config['FILES_FOLDER']):
@@ -96,6 +99,7 @@ def db_world():
 					
 	return 'Created a new Country'
 
+#Load all data in to the database
 @app.route('/databaseData')
 def loadToDatabase():
     for file in os.listdir(app.config['FILES_FOLDER']):
